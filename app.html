@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HOUSE OF GAINS | App Prototype</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#211b00",
+                        "on-error": "#690005",
+                        "surface-container": "#1f2020",
+                        "secondary-container": "#fddc00",
+                        "on-primary-fixed-variant": "#474646",
+                        surface: "#131313",
+                        "secondary-fixed": "#ffe24a",
+                        "primary-container": "#0a0a0a",
+                        "on-surface": "#e4e2e1",
+                        tertiary: "#c8c6c5",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-container": "#0a0a0a",
+                        "on-primary-container": "#7b7979",
+                        "inverse-primary": "#5f5e5e",
+                        background: "#131313",
+                        "on-primary": "#313030",
+                        error: "#ffb4ab",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary-container": "#7a7979",
+                        "outline-variant": "#444748",
+                        "surface-bright": "#393939",
+                        secondary: "#fff9ed",
+                        "on-background": "#e4e2e1",
+                        "on-secondary-container": "#706000",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary": "#393000",
+                        "surface-variant": "#353535",
+                        "surface-container-low": "#1b1c1c",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "inverse-surface": "#e4e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#e5e2e1",
+                        primary: "#c9c6c5",
+                        "surface-tint": "#c9c6c5",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-fixed-dim": "#c9c6c5",
+                        outline: "#8e9192",
+                        "secondary-fixed-dim": "#e3c600",
+                        "on-secondary-fixed-variant": "#524600",
+                        "neon-red": "#FF0000"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        gutter: "24px",
+                        base: "8px",
+                        md: "24px",
+                        lg: "48px",
+                        xl: "80px",
+                        sm: "12px",
+                        xs: "4px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-md": ["Bebas Neue"],
+                        "body-lg": ["Montserrat"],
+                        "stats-number": ["Bebas Neue"],
+                        "headline-lg-mobile": ["Bebas Neue"],
+                        "headline-lg": ["Bebas Neue"],
+                        "title-lg": ["Montserrat"],
+                        "display-xl": ["Bebas Neue"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                        "label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.1em", fontWeight: "600"}],
+                        "headline-md": ["32px", {lineHeight: "32px", fontWeight: "400"}],
+                        "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}],
+                        "stats-number": ["40px", {lineHeight: "40px", fontWeight: "400"}],
+                        "headline-lg-mobile": ["36px", {lineHeight: "36px", fontWeight: "400"}],
+                        "headline-lg": ["48px", {lineHeight: "48px", letterSpacing: "0.02em", fontWeight: "400"}],
+                        "title-lg": ["20px", {lineHeight: "28px", fontWeight: "700"}],
+                        "display-xl": ["80px", {lineHeight: "80px", letterSpacing: "0.02em", fontWeight: "400"}]
+                    },
+                    keyframes: {
+                        "reveal-up": {
+                            "0%": {opacity: "0", transform: "translateY(20px)"},
+                            "100%": {opacity: "1", transform: "translateY(0)"}
+                        },
+                        shimmer: {
+                            "0%": {transform: "translateX(-100%) skewX(-15deg)"},
+                            "100%": {transform: "translateX(200%) skewX(-15deg)"}
+                        }
+                    },
+                    animation: {
+                        "reveal-up": "reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+                        shimmer: "shimmer 1.5s infinite"
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid #333333;
+        }
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+        }
+        .neon-border {
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0A;
+            cursor: default;
+        }
+        .mouse-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.08) 0%, rgba(255, 0, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+        }
+        .shimmer-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            pointer-events: none;
+            display: none;
+        }
+        .program-card:hover .shimmer-overlay {
+            display: block;
+            animation: shimmer 1.2s infinite;
+        }
+        .reveal-item {
+            opacity: 0;
+        }
+    </style>
+  <script type="module" crossorigin src="/house-of-gains/assets/main-C8xJndyO.js"></script>
+</head>
+<body class="font-body-md text-on-surface overflow-x-hidden flex flex-col min-h-screen">
+<!-- Interactive Mouse Glow -->
+<div class="mouse-glow" id="mouse-glow"></div>
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 transition-all duration-300" id="top-nav">
+  <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <div class="flex items-center gap-4">
+      <a href="index.html">
+        <img alt="HOUSE OF GAINS" class="h-10 md:h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYOM4kxWfefKXlfWTBbSy_9nxLkP4GXvWPKSfs2TcoYMVuavvJNVv1odW9grmbWslluTVxWe03CaKK8Bz5vCLmOoOYkMlIQ2QGpWl7mm2A4XoxfgxiN2qfVqdNb1zln4w8O2HAn5_h6UVZX02e8ZhdVqtZBQTmCZGLYiPVSLeSUz_TmJMhuBM7zDEWwZczlyfVIZAS3Z_ojUkCEHBJ5j6AJ6gZcy7K0wKCkwQOF3QS8cvLxwO-qglZ1RO6SiZin9T94PuSOrwc8Fai">
+      </a>
+    </div>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-xl font-body-md text-body-md uppercase tracking-widest">
+      <a id="nav-home" class="text-on-surface hover:text-secondary transition-all duration-300" href="index.html">Home</a>
+      <a id="nav-story" class="text-on-surface hover:text-secondary transition-all duration-300" href="story.html">Story</a>
+      <a id="nav-programs" class="text-on-surface hover:text-secondary transition-all duration-300" href="programs.html">Programs</a>
+      <a id="nav-trainers" class="text-on-surface hover:text-secondary transition-all duration-300" href="trainers.html">Trainers</a>
+      <a id="nav-membership" class="text-on-surface hover:text-secondary transition-all duration-300" href="membership.html">Tiers</a>
+      <a id="nav-gallery" class="text-on-surface hover:text-secondary transition-all duration-300" href="gallery.html">Gallery</a>
+      <a id="nav-contact" class="text-on-surface hover:text-secondary transition-all duration-300" href="contact.html">Contact</a>
+      <a id="nav-app" class="text-on-surface hover:text-secondary transition-all duration-300" href="app.html">App</a>
+    </div>
+    <div class="flex items-center gap-md">
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest transition-all active:scale-95 hover:brightness-110 hidden sm:block join-btn">
+        JOIN NOW
+      </button>
+      <!-- Hamburger Menu Button -->
+      <button id="menu-btn" class="text-on-surface md:hidden focus:outline-none p-2" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-outline-variant/30 px-gutter py-4 transition-all duration-300">
+    <div class="flex flex-col gap-md font-body-md text-body-md uppercase tracking-widest py-2">
+      <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="index.html">Home</a>
+      <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="story.html">Story</a>
+      <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="programs.html">Programs</a>
+      <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
+      <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="membership.html">Tiers</a>
+      <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
+      <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-2" href="contact.html">Contact</a>
+      <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-2 border-t border-outline-variant/10 mt-2 pt-2" href="app.html">App</a>
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest mt-4 w-full join-btn">
+        JOIN NOW
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img alt="Power Training" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPt85TNVr139wEVJ8vpIMRp8oJkZDita-bdWBd8gSgIPP_ywE_-YS2x9Vhw3QM6P9EnHMaMSCzv9pcq-CjQoa2988otgsitJcv-evFtGIpGJAlTdKOrlOT03FeuMK4g5Gsz9kF_tXDRWz_Z7g0GhEHLPuPPRWE7JHS-0Efdpc2D5IJEjvj1RpEuDxWpRHm3BqkUtPsiKckYZzCLosmIstkeeEQsFZe3dlyA76x1gNXSkMOzu_l8bVH1tsb9TYULISJAuc-xGqQ2Tnr"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+    </div>
+    <div class="relative z-10 w-full max-w-container-max px-gutter">
+        <div class="max-w-2xl space-y-md">
+            <h1 class="font-display-xl text-display-xl uppercase leading-none neon-glow reveal-item">
+                Transform Your Body.<br/>
+                <span class="text-neon-red">Unlock Your Potential.</span>
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg reveal-item [animation-delay:200ms]">
+                Experience elite performance in a cinematic dark luxury environment designed for professional athletes and those who demand the absolute best.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-md pt-base reveal-item [animation-delay:400ms]">
+                <button class="bg-neon-red text-white font-headline-md text-headline-md px-xl py-base uppercase transition-all hover:scale-105 active:scale-95 join-btn">
+                    Join Now
+                </button>
+                <button class="border border-outline-variant text-white font-headline-md text-headline-md px-xl py-base uppercase backdrop-blur-md hover:bg-white/10 transition-all active:scale-95">
+                    Book Free Trial
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-xl left-1/2 -translate-x-1/2 flex flex-col items-center gap-sm opacity-50">
+        <span class="text-xs uppercase tracking-widest">Explore Prototype</span>
+        <div class="w-[1px] h-12 bg-gradient-to-b from-neon-red to-transparent"></div>
+    </div>
+</section>
+
+<!-- Statistics Ticker -->
+<section class="bg-primary-container py-md border-y border-outline-variant/20 overflow-hidden relative z-10">
+    <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-lg text-center">
+        <div class="space-y-xs reveal-item">
+            <div class="font-stats-number text-stats-number text-neon-red neon-glow counter" data-target="5000">0</div>
+            <div class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant">Active Members</div>
+        </div>
+        <div class="space-y-xs border-y md:border-y-0 md:border-x border-outline-variant/30 py-md md:py-0 reveal-item [animation-delay:100ms]">
+            <div class="font-stats-number text-stats-number text-neon-red neon-glow counter" data-target="50">0</div>
+            <div class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant">Elite Trainers</div>
+        </div>
+        <div class="space-y-xs reveal-item [animation-delay:200ms]">
+            <div class="font-stats-number text-stats-number text-neon-red neon-glow counter" data-target="10000">0</div>
+            <div class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant">Success Stories</div>
+        </div>
+    </div>
+</section>
+
+<!-- Prototype Dashboard Section -->
+<section class="py-xl bg-background relative z-10" id="prototype-dashboard">
+    <div class="max-w-container-max mx-auto px-gutter space-y-xl">
+        <div class="text-center space-y-sm reveal-item">
+            <h2 class="font-headline-lg text-headline-lg uppercase text-white">PROTOTYPE <span class="text-neon-red">INTERFACE</span></h2>
+            <div class="h-1 w-24 bg-neon-red mx-auto"></div>
+            <p class="font-body-lg text-on-surface-variant max-w-xl mx-auto">Explore features of the upcoming House of Gains VIP member dashboard application.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+            <!-- App Card 1 -->
+            <div class="glass-card p-lg space-y-md hover:border-neon-red transition-all duration-300 reveal-item">
+                <span class="material-symbols-outlined text-4xl text-neon-red">monitoring</span>
+                <h3 class="font-title-lg text-white uppercase">Biometric Sync</h3>
+                <p class="font-body-md text-on-surface-variant text-sm">Sync with Apple Watch, Whoop, and Oura Ring to stream heart rate, calorie expenditure, and sleep score to your coach.</p>
+            </div>
+            <!-- App Card 2 -->
+            <div class="glass-card p-lg space-y-md hover:border-neon-red transition-all duration-300 reveal-item [animation-delay:100ms]">
+                <span class="material-symbols-outlined text-4xl text-neon-red">calendar_month</span>
+                <h3 class="font-title-lg text-white uppercase">PT Scheduler</h3>
+                <p class="font-body-md text-on-surface-variant text-sm">Book, reschedule, or cancel elite personal training sessions directly from our real-time calendar dashboard.</p>
+            </div>
+            <!-- App Card 3 -->
+            <div class="glass-card p-lg space-y-md hover:border-neon-red transition-all duration-300 reveal-item [animation-delay:200ms]">
+                <span class="material-symbols-outlined text-4xl text-neon-red">nutrition</span>
+                <h3 class="font-title-lg text-white uppercase">Macro Logger</h3>
+                <p class="font-body-md text-on-surface-variant text-sm">Log custom meals and scan barcodes to instantly verify macros against your personalized nutrition blueprint.</p>
+            </div>
+            <!-- App Card 4 -->
+            <div class="glass-card p-lg space-y-md hover:border-neon-red transition-all duration-300 reveal-item [animation-delay:300ms]">
+                <span class="material-symbols-outlined text-4xl text-neon-red">qr_code_2</span>
+                <h3 class="font-title-lg text-white uppercase">NFC VIP Entry</h3>
+                <p class="font-body-md text-on-surface-variant text-sm">Use your secure encrypted digital keycard pass for seamless 24/7 keyless entry at all entrance gates.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-xl mt-auto border-t border-outline-variant relative z-10">
+    <div class="flex flex-col items-center gap-md px-gutter text-center">
+        <img alt="HOUSE OF GAINS" class="h-16 mb-md opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYOM4kxWfefKXlfWTBbSy_9nxLkP4GXvWPKSfs2TcoYMVuavvJNVv1odW9grmbWslluTVxWe03CaKK8Bz5vCLmOoOYkMlIQ2QGpWl7mm2A4XoxfgxiN2qfVqdNb1zln4w8O2HAn5_h6UVZX02e8ZhdVqtZBQTmCZGLYiPVSLeSUz_TmJMhuBM7zDEWwZczlyfVIZAS3Z_ojUkCEHBJ5j6AJ6gZcy7K0wKCkwQOF3QS8cvLxwO-qglZ1RO6SiZin9T94PuSOrwc8Fai">
+        <div class="flex flex-wrap justify-center gap-xl">
+            <a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Privacy Policy</a>
+            <a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Terms of Service</a>
+            <a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Membership FAQ</a>
+            <a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Careers</a>
+        </div>
+        <div class="flex gap-lg my-md">
+            <a class="text-on-surface-variant hover:text-neon-red transition-all active:scale-90" href="#"><span class="material-symbols-outlined">brand_family</span></a>
+            <a class="text-on-surface-variant hover:text-neon-red transition-all active:scale-90" href="#"><span class="material-symbols-outlined">podcasts</span></a>
+            <a class="text-on-surface-variant hover:text-neon-red transition-all active:scale-90" href="#"><span class="material-symbols-outlined">video_library</span></a>
+        </div>
+        <p class="font-body-md text-on-surface-variant uppercase tracking-widest opacity-60">
+            © 2024 HOUSE OF GAINS. FORGED IN POWER.
+        </p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Interactive Mouse Glow
+        const glow = document.getElementById('mouse-glow');
+        if (glow) {
+            document.addEventListener('mousemove', (e) => {
+                glow.style.left = `${e.clientX}px`;
+                glow.style.top = `${e.clientY}px`;
+            });
+        }
+
+        // Entrance Animations Observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-reveal-up');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-item').forEach(item => {
+            revealObserver.observe(item);
+        });
+
+        // Statistics Counter Animation
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const suffix = target >= 1000 ? 'K+' : '+';
+                    const duration = 2000;
+                    const startTime = performance.now();
+                    
+                    const updateCounter = (currentTime) => {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const easedProgress = progress * (2 - progress);
+                        let currentCount = Math.floor(easedProgress * target);
+                        
+                        if (target >= 1000) {
+                            currentCount = (currentCount / 1000).toFixed(currentCount % 1000 === 0 ? 0 : 1);
+                        }
+                        
+                        counter.innerText = currentCount + suffix;
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        }
+                    };
+                    
+                    requestAnimationFrame(updateCounter);
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+    });
+</script>
+</body>
+</html>
