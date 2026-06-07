@@ -1,0 +1,17 @@
+{
+  "name": "house-of-gains",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://WhiteWalker-dev.github.io/house-of-gains/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0",
+    "gh-pages": "^6.1.1"
+  }
+}

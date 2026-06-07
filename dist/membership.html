@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Membership Plans | HOUSE OF GAINS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Montserrat:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#211b00",
+                        "on-error": "#690005",
+                        "surface-container": "#1f2020",
+                        "secondary-container": "#fddc00",
+                        "on-primary-fixed-variant": "#474646",
+                        surface: "#131313",
+                        "secondary-fixed": "#ffe24a",
+                        "primary-container": "#0a0a0a",
+                        "on-surface": "#e4e2e1",
+                        tertiary: "#c8c6c5",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-container": "#0a0a0a",
+                        "on-primary-container": "#7b7979",
+                        "inverse-primary": "#5f5e5e",
+                        background: "#131313",
+                        "on-primary": "#313030",
+                        error: "#ffb4ab",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary-container": "#7a7979",
+                        "outline-variant": "#444748",
+                        "surface-bright": "#393939",
+                        secondary: "#fff9ed",
+                        "on-background": "#e4e2e1",
+                        "on-secondary-container": "#706000",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary": "#393000",
+                        "surface-variant": "#353535",
+                        "surface-container-low": "#1b1c1c",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "inverse-surface": "#e4e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#e5e2e1",
+                        primary: "#c9c6c5",
+                        "surface-tint": "#c9c6c5",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-fixed-dim": "#c9c6c5",
+                        outline: "#8e9192",
+                        "secondary-fixed-dim": "#e3c600",
+                        "on-secondary-fixed-variant": "#524600"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        gutter: "24px",
+                        base: "8px",
+                        md: "24px",
+                        lg: "48px",
+                        xl: "80px",
+                        sm: "12px",
+                        xs: "4px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-md": ["Bebas Neue"],
+                        "body-lg": ["Montserrat"],
+                        "stats-number": ["Bebas Neue"],
+                        "headline-lg-mobile": ["Bebas Neue"],
+                        "headline-lg": ["Bebas Neue"],
+                        "title-lg": ["Montserrat"],
+                        "display-xl": ["Bebas Neue"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                        "label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.1em", fontWeight: "600"}],
+                        "headline-md": ["32px", {lineHeight: "32px", fontWeight: "400"}],
+                        "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}],
+                        "stats-number": ["40px", {lineHeight: "40px", fontWeight: "400"}],
+                        "headline-lg-mobile": ["36px", {lineHeight: "36px", fontWeight: "400"}],
+                        "headline-lg": ["48px", {lineHeight: "48px", letterSpacing: "0.02em", fontWeight: "400"}],
+                        "title-lg": ["20px", {lineHeight: "28px", fontWeight: "700"}],
+                        "display-xl": ["80px", {lineHeight: "80px", letterSpacing: "0.02em", fontWeight: "400"}]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid #333333;
+        }
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        .neon-border-glow:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+            border-color: #FF0000;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #333333;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e4e2e1;
+            overflow-x: hidden;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+  <script type="module" crossorigin src="/house-of-gains/assets/main-C8xJndyO.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container flex flex-col min-h-screen">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 transition-all duration-300" id="top-nav">
+  <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <div class="flex items-center gap-4">
+      <a href="index.html">
+        <img alt="HOUSE OF GAINS" class="h-12 md:h-14 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYOM4kxWfefKXlfWTBbSy_9nxLkP4GXvWPKSfs2TcoYMVuavvJNVv1odW9grmbWslluTVxWe03CaKK8Bz5vCLmOoOYkMlIQ2QGpWl7mm2A4XoxfgxiN2qfVqdNb1zln4w8O2HAn5_h6UVZX02e8ZhdVqtZBQTmCZGLYiPVSLeSUz_TmJMhuBM7zDEWwZczlyfVIZAS3Z_ojUkCEHBJ5j6AJ6gZcy7K0wKCkwQOF3QS8cvLxwO-qglZ1RO6SiZin9T94PuSOrwc8Fai">
+      </a>
+    </div>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-xl font-body-md text-body-md uppercase tracking-widest">
+      <a id="nav-home" class="text-on-surface hover:text-secondary transition-all duration-300" href="index.html">Home</a>
+      <a id="nav-story" class="text-on-surface hover:text-secondary transition-all duration-300" href="story.html">Story</a>
+      <a id="nav-programs" class="text-on-surface hover:text-secondary transition-all duration-300" href="programs.html">Programs</a>
+      <a id="nav-trainers" class="text-on-surface hover:text-secondary transition-all duration-300" href="trainers.html">Trainers</a>
+      <a id="nav-membership" class="text-on-surface hover:text-secondary transition-all duration-300" href="membership.html">Tiers</a>
+      <a id="nav-gallery" class="text-on-surface hover:text-secondary transition-all duration-300" href="gallery.html">Gallery</a>
+      <a id="nav-contact" class="text-on-surface hover:text-secondary transition-all duration-300" href="contact.html">Contact</a>
+      <a id="nav-app" class="text-on-surface hover:text-secondary transition-all duration-300" href="app.html">App</a>
+    </div>
+    <div class="flex items-center gap-md">
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest transition-all active:scale-95 hover:brightness-110 hidden sm:block join-btn">
+        JOIN NOW
+      </button>
+      <!-- Hamburger Menu Button -->
+      <button id="menu-btn" class="text-on-surface md:hidden focus:outline-none p-2" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-outline-variant/30 px-gutter py-4 transition-all duration-300">
+    <div class="flex flex-col gap-md font-body-md text-body-md uppercase tracking-widest py-2">
+      <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="index.html">Home</a>
+      <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="story.html">Story</a>
+      <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="programs.html">Programs</a>
+      <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
+      <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="membership.html">Tiers</a>
+      <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
+      <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-2" href="contact.html">Contact</a>
+      <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-2 border-t border-outline-variant/10 mt-2 pt-2" href="app.html">App</a>
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest mt-4 w-full join-btn">
+        JOIN NOW
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-32 pb-xl flex-grow">
+    <!-- Hero Section -->
+    <section class="max-w-container-max mx-auto px-gutter mb-xl text-center">
+        <h1 class="font-display-xl text-headline-lg md:text-display-xl mb-4 tracking-tight">CHOOSE YOUR <span class="text-[#FF0000] neon-glow">BATTLEGROUND</span></h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Elite performance requires elite equipment. Select the membership that matches your ambition. No excuses, just gains.</p>
+        <!-- Pricing Toggle -->
+        <div class="flex items-center justify-center gap-md mb-12">
+            <span class="font-label-md text-label-md text-on-surface-variant">MONTHLY</span>
+            <button class="relative w-16 h-8 bg-surface-container rounded-full p-1 transition-colors duration-300 focus:outline-none ring-1 ring-outline-variant" id="billingToggle">
+                <div class="w-6 h-6 bg-[#FF0000] rounded-sm transition-transform duration-300 translate-x-0" id="toggleKnob"></div>
+            </button>
+            <span class="font-label-md text-label-md text-on-surface flex items-center gap-xs">
+                ANNUAL <span class="text-[#FF0000] text-[10px] border border-[#FF0000] px-1 rounded-sm">SAVE 20%</span>
+            </span>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-md mb-xl">
+        <!-- Basic Plan -->
+        <div class="glass-panel p-md flex flex-col transition-all duration-500 neon-border-glow scroll-reveal">
+            <div class="mb-base">
+                <span class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">The Foundation</span>
+                <h3 class="font-headline-md text-headline-md mt-2 font-bold">ESSENTIAL</h3>
+            </div>
+            <div class="mb-md">
+                <span class="font-stats-number text-stats-number text-on-surface font-bold" id="basicPrice">$79</span>
+                <span class="text-on-surface-variant font-body-md text-sm" id="basicPeriod">/mo</span>
+            </div>
+            <ul class="space-y-sm mb-lg flex-grow">
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    24/7 Facility Access
+                </li>
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    Luxury Shower Access
+                </li>
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    Standard Locker Hire
+                </li>
+                <li class="flex items-center gap-xs text-on-surface-variant/40 font-body-md line-through">
+                    <span class="material-symbols-outlined scale-75">cancel</span> 
+                    Personal Training
+                </li>
+            </ul>
+            <button class="w-full border border-outline text-on-surface font-bold py-4 tracking-widest hover:bg-[#FF0000] hover:border-[#FF0000] transition-all select-tier-btn" data-tier="essential">SELECT TIER</button>
+        </div>
+        <!-- Premium Plan (Featured) -->
+        <div class="relative bg-surface-container-high border-2 border-[#FF0000] p-md flex flex-col shadow-[0_0_30px_rgba(255,0,0,0.15)] scale-105 z-10 scroll-reveal" style="transition-delay: 0.1s;">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FF0000] text-white text-[10px] font-bold px-4 py-1 tracking-widest">MOST POPULAR</div>
+            <div class="mb-base">
+                <span class="font-label-md text-label-md text-secondary tracking-widest uppercase">Performance Tier</span>
+                <h3 class="font-headline-md text-headline-md mt-2 font-bold">VANGUARD</h3>
+            </div>
+            <div class="mb-md">
+                <span class="font-stats-number text-stats-number text-on-surface font-bold" id="premiumPrice">$149</span>
+                <span class="text-on-surface-variant font-body-md text-sm" id="premiumPeriod">/mo</span>
+            </div>
+            <ul class="space-y-sm mb-lg flex-grow">
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    24/7 VIP Entry
+                </li>
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    4 Training Sessions/mo
+                </li>
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    Recovery Lounge Access
+                </li>
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    Nutritional Planning
+                </li>
+            </ul>
+            <button class="w-full bg-[#FF0000] text-white font-bold py-4 tracking-widest hover:brightness-110 transition-all select-tier-btn" data-tier="vanguard">CHOOSE VANGUARD</button>
+        </div>
+        <!-- Elite Plan -->
+        <div class="glass-panel p-md flex flex-col transition-all duration-500 neon-border-glow scroll-reveal" style="transition-delay: 0.2s;">
+            <div class="mb-base">
+                <span class="font-label-md text-label-md text-on-surface-variant tracking-widest uppercase">Uncompromising Power</span>
+                <h3 class="font-headline-md text-headline-md mt-2 font-bold">THE ELITE</h3>
+            </div>
+            <div class="mb-md">
+                <span class="font-stats-number text-stats-number text-on-surface font-bold" id="elitePrice">$299</span>
+                <span class="text-on-surface-variant font-body-md text-sm" id="elitePeriod">/mo</span>
+            </div>
+            <ul class="space-y-sm mb-lg flex-grow">
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    Unlimited PT Sessions
+                </li>
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    Private Locker Suite
+                </li>
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    Daily Supplement Bar
+                </li>
+                <li class="flex items-center gap-xs text-on-surface font-body-md">
+                    <span class="material-symbols-outlined text-[#FF0000] scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> 
+                    Valet Parking
+                </li>
+            </ul>
+            <button class="w-full border border-outline text-on-surface font-bold py-4 tracking-widest hover:bg-[#FF0000] hover:border-[#FF0000] transition-all select-tier-btn" data-tier="elite">SELECT ELITE</button>
+        </div>
+    </section>
+
+    <!-- Detailed Comparison Table -->
+    <section class="max-w-container-max mx-auto px-gutter mb-xl overflow-x-auto custom-scrollbar scroll-reveal">
+        <h2 class="font-headline-md text-headline-md mb-md text-center">FULL SPECS</h2>
+        <table class="w-full border-collapse border border-outline-variant/30">
+            <thead>
+                <tr class="bg-surface-container-low border-b border-outline-variant/30">
+                    <th class="p-md text-left font-label-md text-on-surface-variant uppercase tracking-widest border-r border-outline-variant/30">Feature</th>
+                    <th class="p-md text-center font-headline-md text-on-surface border-r border-outline-variant/30">Essential</th>
+                    <th class="p-md text-center font-headline-md text-secondary border-r border-outline-variant/30">Vanguard</th>
+                    <th class="p-md text-center font-headline-md text-on-surface">The Elite</th>
+                </tr>
+            </thead>
+            <tbody class="text-body-md">
+                <tr class="border-b border-outline-variant/10">
+                    <td class="p-md font-label-md text-on-surface border-r border-outline-variant/30">24/7 Gym Access</td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-[#FF0000]"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done</span></td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-[#FF0000]"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done</span></td>
+                    <td class="p-md text-center text-[#FF0000]"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done</span></td>
+                </tr>
+                <tr class="border-b border-outline-variant/10 bg-surface-container/30">
+                    <td class="p-md font-label-md text-on-surface border-r border-outline-variant/30">Group Fitness Classes</td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-on-surface-variant/20"><span class="material-symbols-outlined">horizontal_rule</span></td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-[#FF0000]"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done</span></td>
+                    <td class="p-md text-center text-[#FF0000]"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done</span></td>
+                </tr>
+                <tr class="border-b border-outline-variant/10">
+                    <td class="p-md font-label-md text-on-surface border-r border-outline-variant/30">Personal Training Sessions</td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-on-surface-variant">Available ($)</td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-on-surface-variant">4 Sessions/mo</td>
+                    <td class="p-md text-center text-[#FF0000] font-bold">Unlimited Sessions</td>
+                </tr>
+                <tr class="border-b border-outline-variant/10 bg-surface-container/30">
+                    <td class="p-md font-label-md text-on-surface border-r border-outline-variant/30">Spa &amp; Cold Plunge Access</td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-on-surface-variant/20"><span class="material-symbols-outlined">horizontal_rule</span></td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-[#FF0000]"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done</span></td>
+                    <td class="p-md text-center text-[#FF0000]"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done</span></td>
+                </tr>
+                <tr class="border-b border-outline-variant/10">
+                    <td class="p-md font-label-md text-on-surface border-r border-outline-variant/30">Nutrition Consultation</td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-on-surface-variant/20"><span class="material-symbols-outlined">horizontal_rule</span></td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-on-surface-variant/20"><span class="material-symbols-outlined">horizontal_rule</span></td>
+                    <td class="p-md text-center text-[#FF0000]"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done</span></td>
+                </tr>
+                <tr class="border-b border-outline-variant/10 bg-surface-container/30">
+                    <td class="p-md font-label-md text-on-surface border-r border-outline-variant/30">Merchandise Discount</td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-on-surface-variant/20"><span class="material-symbols-outlined">horizontal_rule</span></td>
+                    <td class="p-md text-center border-r border-outline-variant/30 text-on-surface font-bold">10% Off</td>
+                    <td class="p-md text-center text-on-surface font-bold">25% Off</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- CTA Section with Cinematic Image -->
+    <section class="max-w-container-max mx-auto px-gutter mb-xl scroll-reveal">
+        <div class="relative h-[400px] overflow-hidden group">
+            <img alt="Gym Environment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjBZuq3hfQjnX0_W2JbqnMpTBMTcBM9C_3eHZHzAg8Pzd-_buJ2dNYFJJQQb8UEbFt-LY1vMrtSK7vePl6z-g55ViiBpRstQANTeQxml6G7yHD8o00AdjqAsPaDQ1DuUK2YOhtDTQ6LSuTRU-UxpQ_-zFxAZAiaS56alFSVoxtN4_JD82T4KYV3TkMsK43IQpWM-pe1KU_5SWm3gR7osPYlNA6A_JY_f0gjB2PFcBdV5-S2nZtrHnSw4ezq83dPpnT_TKtoFuaCKLp">
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent flex items-center p-xl">
+                <div class="max-w-lg">
+                    <h2 class="font-headline-md text-display-xl mb-4 leading-none">FORGED IN <span class="text-[#FF0000]">POWER</span></h2>
+                    <p class="font-body-lg text-body-lg mb-8">Not sure which plan is right for you? Speak with a performance consultant today.</p>
+                    <button class="bg-[#FF0000] text-white font-bold px-10 py-5 tracking-widest hover:brightness-110 transition-all uppercase consultation-btn">TALK TO A PRO</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-xl mt-auto bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant">
+    <div class="flex flex-col items-center gap-md px-gutter text-center">
+        <div class="font-headline-lg text-headline-lg text-on-surface tracking-tighter">HOUSE OF GAINS</div>
+        <div class="flex flex-wrap justify-center gap-md">
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Membership FAQ</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Careers</a>
+        </div>
+        <div class="flex justify-center gap-md mt-4">
+            <a href="#" class="text-on-surface-variant hover:text-[#FF0000] transition-colors duration-300"><span class="material-symbols-outlined text-[24px]">brand_awareness</span></a>
+            <a href="#" class="text-on-surface-variant hover:text-[#FF0000] transition-colors duration-300"><span class="material-symbols-outlined text-[24px]">play_circle</span></a>
+            <a href="#" class="text-on-surface-variant hover:text-[#FF0000] transition-colors duration-300"><span class="material-symbols-outlined text-[24px]">close</span></a>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant/60 uppercase tracking-widest mt-base">© 2024 HOUSE OF GAINS. FORGED IN POWER.</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const billingToggle = document.getElementById('billingToggle');
+        const toggleKnob = document.getElementById('toggleKnob');
+        
+        // Essential, Vanguard, Elite
+        const prices = {
+            essential: { monthly: 79, annual: 63 },
+            vanguard: { monthly: 149, annual: 119 },
+            elite: { monthly: 299, annual: 239 }
+        };
+
+        let isAnnual = false;
+
+        billingToggle.addEventListener('click', () => {
+            isAnnual = !isAnnual;
+            
+            // Toggle Animation
+            toggleKnob.style.transform = isAnnual ? 'translateX(32px)' : 'translateX(0)';
+            
+            // Update Prices
+            document.getElementById('basicPrice').innerText = isAnnual ? `$${prices.essential.annual}` : `$${prices.essential.monthly}`;
+            document.getElementById('premiumPrice').innerText = isAnnual ? `$${prices.vanguard.annual}` : `$${prices.vanguard.monthly}`;
+            document.getElementById('elitePrice').innerText = isAnnual ? `$${prices.elite.annual}` : `$${prices.elite.monthly}`;
+            
+            // Update Period Text
+            const periodText = isAnnual ? '/mo billed annually' : '/mo';
+            document.getElementById('basicPeriod').innerText = periodText;
+            document.getElementById('premiumPeriod').innerText = periodText;
+            document.getElementById('elitePeriod').innerText = periodText;
+        });
+
+        // Setup Consultation Button
+        document.querySelectorAll('.consultation-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById('trial-modal').classList.remove('hidden');
+            });
+        });
+
+        // Setup Select Tier Buttons to auto-populate Join Modal select tier
+        document.querySelectorAll('.select-tier-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tierVal = btn.getAttribute('data-tier');
+                const selectEl = document.getElementById('join-tier');
+                if (selectEl) {
+                    selectEl.value = tierVal;
+                }
+                document.getElementById('join-modal').classList.remove('hidden');
+            });
+        });
+    });
+</script>
+</body>
+</html>

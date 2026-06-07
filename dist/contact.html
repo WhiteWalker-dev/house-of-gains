@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Contact Us | HOUSE OF GAINS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#211b00",
+                        "on-error": "#690005",
+                        "surface-container": "#1f2020",
+                        "secondary-container": "#fddc00",
+                        "on-primary-fixed-variant": "#474646",
+                        surface: "#131313",
+                        "secondary-fixed": "#ffe24a",
+                        "primary-container": "#0a0a0a",
+                        "on-surface": "#e4e2e1",
+                        tertiary: "#c8c6c5",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-container": "#0a0a0a",
+                        "on-primary-container": "#7b7979",
+                        "inverse-primary": "#5f5e5e",
+                        background: "#131313",
+                        "on-primary": "#313030",
+                        error: "#ffb4ab",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary-container": "#7a7979",
+                        "outline-variant": "#444748",
+                        "surface-bright": "#393939",
+                        secondary: "#fff9ed",
+                        "on-background": "#e4e2e1",
+                        "on-secondary-container": "#706000",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary": "#393000",
+                        "surface-variant": "#353535",
+                        "surface-container-low": "#1b1c1c",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "inverse-surface": "#e4e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#e5e2e1",
+                        primary: "#c9c6c5",
+                        "surface-tint": "#c9c6c5",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-fixed-dim": "#c9c6c5",
+                        outline: "#8e9192",
+                        "secondary-fixed-dim": "#e3c600",
+                        "on-secondary-fixed-variant": "#524600"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        gutter: "24px",
+                        base: "8px",
+                        md: "24px",
+                        lg: "48px",
+                        xl: "80px",
+                        sm: "12px",
+                        xs: "4px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-md": ["Bebas Neue"],
+                        "body-lg": ["Montserrat"],
+                        "stats-number": ["Bebas Neue"],
+                        "headline-lg-mobile": ["Bebas Neue"],
+                        "headline-lg": ["Bebas Neue"],
+                        "title-lg": ["Montserrat"],
+                        "display-xl": ["Bebas Neue"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                        "label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.1em", fontWeight: "600"}],
+                        "headline-md": ["32px", {lineHeight: "32px", fontWeight: "400"}],
+                        "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}],
+                        "stats-number": ["40px", {lineHeight: "40px", fontWeight: "400"}],
+                        "headline-lg-mobile": ["36px", {lineHeight: "36px", fontWeight: "400"}],
+                        "headline-lg": ["48px", {lineHeight: "48px", letterSpacing: "0.02em", fontWeight: "400"}],
+                        "title-lg": ["20px", {lineHeight: "28px", fontWeight: "700"}],
+                        "display-xl": ["80px", {lineHeight: "80px", letterSpacing: "0.02em", fontWeight: "400"}]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            background-color: #0A0A0A;
+            color: #e4e2e1;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid #333333;
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+  <script type="module" crossorigin src="/house-of-gains/assets/main-C8xJndyO.js"></script>
+</head>
+<body class="bg-background flex flex-col min-h-screen">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 transition-all duration-300" id="top-nav">
+  <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <div class="flex items-center gap-4">
+      <a href="index.html">
+        <img alt="HOUSE OF GAINS" class="h-12 md:h-14 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYOM4kxWfefKXlfWTBbSy_9nxLkP4GXvWPKSfs2TcoYMVuavvJNVv1odW9grmbWslluTVxWe03CaKK8Bz5vCLmOoOYkMlIQ2QGpWl7mm2A4XoxfgxiN2qfVqdNb1zln4w8O2HAn5_h6UVZX02e8ZhdVqtZBQTmCZGLYiPVSLeSUz_TmJMhuBM7zDEWwZczlyfVIZAS3Z_ojUkCEHBJ5j6AJ6gZcy7K0wKCkwQOF3QS8cvLxwO-qglZ1RO6SiZin9T94PuSOrwc8Fai">
+      </a>
+    </div>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-xl font-body-md text-body-md uppercase tracking-widest">
+      <a id="nav-home" class="text-on-surface hover:text-secondary transition-all duration-300" href="index.html">Home</a>
+      <a id="nav-story" class="text-on-surface hover:text-secondary transition-all duration-300" href="story.html">Story</a>
+      <a id="nav-programs" class="text-on-surface hover:text-secondary transition-all duration-300" href="programs.html">Programs</a>
+      <a id="nav-trainers" class="text-on-surface hover:text-secondary transition-all duration-300" href="trainers.html">Trainers</a>
+      <a id="nav-membership" class="text-on-surface hover:text-secondary transition-all duration-300" href="membership.html">Tiers</a>
+      <a id="nav-gallery" class="text-on-surface hover:text-secondary transition-all duration-300" href="gallery.html">Gallery</a>
+      <a id="nav-contact" class="text-on-surface hover:text-secondary transition-all duration-300" href="contact.html">Contact</a>
+      <a id="nav-app" class="text-on-surface hover:text-secondary transition-all duration-300" href="app.html">App</a>
+    </div>
+    <div class="flex items-center gap-md">
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest transition-all active:scale-95 hover:brightness-110 hidden sm:block join-btn">
+        JOIN NOW
+      </button>
+      <!-- Hamburger Menu Button -->
+      <button id="menu-btn" class="text-on-surface md:hidden focus:outline-none p-2" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-outline-variant/30 px-gutter py-4 transition-all duration-300">
+    <div class="flex flex-col gap-md font-body-md text-body-md uppercase tracking-widest py-2">
+      <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="index.html">Home</a>
+      <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="story.html">Story</a>
+      <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="programs.html">Programs</a>
+      <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
+      <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="membership.html">Tiers</a>
+      <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
+      <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-2" href="contact.html">Contact</a>
+      <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-2 border-t border-outline-variant/10 mt-2 pt-2" href="app.html">App</a>
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest mt-4 w-full join-btn">
+        JOIN NOW
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow pt-[80px]">
+    <!-- Hero Section -->
+    <section class="relative h-[45vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="Gym Interior" class="w-full h-full object-cover grayscale opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRq97qeqZXs6qLZMKiYaNTTSi2prgaM-_IhaddCuoI_a9THeOvyOZ72LJ0TNqv5yKhesojtze3mMDPKpPj0e08pV8sjMNR52X2DdhFOVVoEEVBiwW7H5XEthaPFRGi007IlFdqo1urS2AqOFKNFDPTsBkXYrvvI1lEWYy-7ZH_wouXVBhvE0yRhjutdtvZQNMPhmzIc2svqMHXrG_IkNhFMU_SFTdN0ZMK3uy8E_C7gp6lA7UlVdYvbNKj-aOE-tLGGlvtbAzfkHAB">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
+        </div>
+        <div class="relative z-10 text-center px-gutter">
+            <h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl tracking-tighter text-on-surface uppercase">START YOUR EVOLUTION.</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-4 uppercase tracking-[0.2em] text-sm">Contact the facility of elite performance.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content Grid -->
+    <section class="max-w-container-max mx-auto px-gutter py-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+            <!-- Left Column: Form -->
+            <div class="lg:col-span-7 scroll-reveal">
+                <div class="glass-panel p-lg">
+                    <h2 class="font-headline-md text-headline-md mb-md border-l-4 border-[#FF0000] pl-4 font-display text-white">SEND A MESSAGE</h2>
+                    <form class="space-y-md" id="contactForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                            <div class="flex flex-col gap-xs">
+                                <label class="font-label-md text-label-md uppercase text-on-surface-variant text-xs">Full Name</label>
+                                <input required class="bg-[#0A0A0A] border border-outline-variant p-4 focus:border-[#FF0000] focus:ring-0 text-on-surface placeholder:text-outline/40 transition-all duration-300 outline-none" placeholder="JOHN DOE" type="text" id="contactName">
+                            </div>
+                            <div class="flex flex-col gap-xs">
+                                <label class="font-label-md text-label-md uppercase text-on-surface-variant text-xs">Email Address</label>
+                                <input required class="bg-[#0A0A0A] border border-outline-variant p-4 focus:border-[#FF0000] focus:ring-0 text-on-surface placeholder:text-outline/40 transition-all duration-300 outline-none" placeholder="DOE@PERFORMANCE.COM" type="email" id="contactEmail">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                            <div class="flex flex-col gap-xs">
+                                <label class="font-label-md text-label-md uppercase text-on-surface-variant text-xs">Phone Number</label>
+                                <input class="bg-[#0A0A0A] border border-outline-variant p-4 focus:border-[#FF0000] focus:ring-0 text-on-surface placeholder:text-outline/40 transition-all duration-300 outline-none" placeholder="+1 (555) 000-0000" type="tel" id="contactPhone">
+                            </div>
+                            <div class="flex flex-col gap-xs">
+                                <label class="font-label-md text-label-md uppercase text-on-surface-variant text-xs">Primary Goal</label>
+                                <select class="bg-[#0A0A0A] border border-outline-variant p-4 focus:border-[#FF0000] focus:ring-0 text-on-surface transition-all duration-300 appearance-none outline-none" id="contactGoal">
+                                    <option>HYPERTROPHY</option>
+                                    <option>POWERLIFTING</option>
+                                    <option>ATHLETIC PERFORMANCE</option>
+                                    <option>FAT LOSS</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-xs">
+                            <label class="font-label-md text-label-md uppercase text-on-surface-variant text-xs">Message</label>
+                            <textarea required class="bg-[#0A0A0A] border border-outline-variant p-4 focus:border-[#FF0000] focus:ring-0 text-on-surface placeholder:text-outline/40 transition-all duration-300 outline-none" placeholder="DESCRIBE YOUR OBJECTIVES..." rows="4" id="contactMsg"></textarea>
+                        </div>
+                        <button class="w-full bg-[#FF0000] text-white font-bold py-4 uppercase tracking-[0.2em] hover:brightness-125 transition-all duration-300 neon-glow" type="submit" id="submitBtn">
+                            INITIALIZE CONTACT
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Right Column: Info & Map -->
+            <div class="lg:col-span-5 flex flex-col gap-md">
+                <!-- Info Card -->
+                <div class="glass-panel p-lg space-y-lg scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="flex items-start gap-md">
+                        <span class="material-symbols-outlined text-[#FF0000] text-3xl">location_on</span>
+                        <div>
+                            <h4 class="font-display text-label-md text-on-surface-variant uppercase mb-1 text-xs">HQ Location</h4>
+                            <p class="font-body-lg text-body-lg text-white">742 Iron Forge St.<br>Industrial District, NY 10013</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-md">
+                        <span class="material-symbols-outlined text-[#FF0000] text-3xl">schedule</span>
+                        <div>
+                            <h4 class="font-display text-label-md text-on-surface-variant uppercase mb-1 text-xs">Operating Hours</h4>
+                            <p class="font-stats-number text-stats-number text-on-surface text-3xl font-bold">24/7/365</p>
+                            <p class="font-body-md text-body-md text-[#FF0000] uppercase tracking-widest text-xs">Always Forging</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                        <div class="flex items-start gap-md">
+                            <span class="material-symbols-outlined text-[#FF0000] text-2xl">call</span>
+                            <div>
+                                <h4 class="font-display text-label-md text-on-surface-variant uppercase mb-1 text-xs">Phone</h4>
+                                <p class="font-body-md text-body-md text-white">+1.800.GAINS.01</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-md">
+                            <span class="material-symbols-outlined text-[#FF0000] text-2xl">mail</span>
+                            <div>
+                                <h4 class="font-display text-label-md text-on-surface-variant uppercase mb-1 text-xs">Email</h4>
+                                <p class="font-body-md text-body-md text-white">elite@houseofgains.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Map Visual -->
+                <div class="glass-panel h-[350px] relative overflow-hidden group scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="absolute inset-0 bg-[#0A0A0A]">
+                        <img alt="Location Map" class="w-full h-full object-cover grayscale brightness-50 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSsz5xah-vwRNqGMX0eQ_BpHP6KHBz9UFdpzy2t_aQuVTk_AgWC1cF03KcR5xO1yW8OhLN7RbVuVInyqaxgZi4IAEG9Cc7sJlkUqSbp8zFZ4A0IOjL17Hr0Vn34Vlr1yWImnVWQqqo5c4ZBur5YwNF206k2lFPvSbBQIWUCiBfmNlOiM26u1JUnonM2__JzmaRGdfjAww9ExRUkXUUtwtqJZN923Q6fMWbnLm5XFssQ7YGsPDrNY6xoQhQ1Q0AOCcjSepDGoNWdkPl">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-12 h-12 rounded-full bg-[#FF0000]/20 flex items-center justify-center animate-ping"></div>
+                            <div class="absolute w-4 h-4 rounded-full bg-[#FF0000] neon-glow"></div>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 z-10">
+                        <button class="bg-surface/80 backdrop-blur-md border border-outline-variant px-4 py-2 text-label-md font-label-md uppercase tracking-wider hover:bg-[#FF0000] transition-colors duration-300" onclick="window.open('https://maps.google.com', '_blank')">
+                            Open Navigation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aesthetic Divider / Ticker -->
+    <div class="bg-surface-container-lowest border-y border-outline-variant/30 py-8 overflow-hidden">
+        <div class="flex gap-xl animate-marquee whitespace-nowrap">
+            <span class="font-headline-md text-headline-md text-on-surface/20 flex items-center gap-4">STRENGTH <span class="w-2 h-2 bg-[#FF0000] rounded-full"></span></span>
+            <span class="font-headline-md text-headline-md text-on-surface/20 flex items-center gap-4">DISCIPLINE <span class="w-2 h-2 bg-[#FF0000] rounded-full"></span></span>
+            <span class="font-headline-md text-headline-md text-on-surface/20 flex items-center gap-4">POWER <span class="w-2 h-2 bg-[#FF0000] rounded-full"></span></span>
+            <span class="font-headline-md text-headline-md text-on-surface/20 flex items-center gap-4">EVOLUTION <span class="w-2 h-2 bg-[#FF0000] rounded-full"></span></span>
+            <span class="font-headline-md text-headline-md text-on-surface/20 flex items-center gap-4">PERFORMANCE <span class="w-2 h-2 bg-[#FF0000] rounded-full"></span></span>
+            <!-- Duplicate for loop -->
+            <span class="font-headline-md text-headline-md text-on-surface/20 flex items-center gap-4">STRENGTH <span class="w-2 h-2 bg-[#FF0000] rounded-full"></span></span>
+            <span class="font-headline-md text-headline-md text-on-surface/20 flex items-center gap-4">DISCIPLINE <span class="w-2 h-2 bg-[#FF0000] rounded-full"></span></span>
+            <span class="font-headline-md text-headline-md text-on-surface/20 flex items-center gap-4">POWER <span class="w-2 h-2 bg-[#FF0000] rounded-full"></span></span>
+            <span class="font-headline-md text-headline-md text-on-surface/20 flex items-center gap-4">EVOLUTION <span class="w-2 h-2 bg-[#FF0000] rounded-full"></span></span>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-xl mt-auto bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant">
+    <div class="flex flex-col items-center gap-md px-gutter text-center">
+        <h3 class="font-headline-lg text-headline-lg text-on-surface tracking-wider font-display">HOUSE OF GAINS</h3>
+        <div class="flex gap-md items-center justify-center mt-4 mb-4">
+            <a href="#" class="text-on-surface hover:text-[#FF0000] transition-colors duration-300"><span class="material-symbols-outlined text-2xl">brand_awareness</span></a>
+            <a href="#" class="text-on-surface hover:text-[#FF0000] transition-colors duration-300"><span class="material-symbols-outlined text-2xl">play_circle</span></a>
+            <a href="#" class="text-on-surface hover:text-[#FF0000] transition-colors duration-300"><span class="material-symbols-outlined text-2xl">close</span></a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-lg">
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Membership FAQ</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Careers</a>
+        </div>
+        <p class="font-body-md text-body-md text-secondary mt-4 uppercase tracking-[0.3em]">© 2024 HOUSE OF GAINS. FORGED IN POWER.</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Micro-interactions for the form
+        const form = document.getElementById('contactForm');
+        const btn = document.getElementById('submitBtn');
+
+        if (form && btn) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contactName').value;
+                const email = document.getElementById('contactEmail').value;
+                const goal = document.getElementById('contactGoal').value;
+                const originalText = btn.innerText;
+
+                btn.innerText = 'TRANSMITTING...';
+                btn.style.opacity = '0.7';
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    btn.innerText = 'SENT SUCCESSFULLY';
+                    btn.style.backgroundColor = '#22c55e'; // Success green
+                    btn.disabled = false;
+                    form.reset();
+                    
+                    alert(`Thank you, ${name}! Your request regarding ${goal} has been sent. One of our performance coaches will email you at ${email} shortly.`);
+
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.style.backgroundColor = '#FF0000';
+                        btn.style.opacity = '1';
+                    }, 3000);
+                }, 1500);
+            });
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Meet The Elite | HOUSE OF GAINS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#410000",
+                    "on-error": "#690005",
+                    "surface-container": "#1f2020",
+                    "secondary-container": "#ff5540",
+                    "on-primary-fixed-variant": "#474646",
+                    "surface": "#131313",
+                    "secondary-fixed": "#ffdad4",
+                    "primary-container": "#0a0a0a",
+                    "on-surface": "#e4e2e1",
+                    "tertiary": "#c8c6c5",
+                    "on-tertiary": "#313030",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-primary-fixed": "#1c1b1b",
+                    "inverse-on-surface": "#303030",
+                    "tertiary-container": "#0a0a0a",
+                    "on-primary-container": "#7b7979",
+                    "inverse-primary": "#5f5e5e",
+                    "background": "#131313",
+                    "on-primary": "#313030",
+                    "error": "#ffb4ab",
+                    "error-container": "#93000a",
+                    "surface-container-highest": "#353535",
+                    "on-tertiary-container": "#7a7979",
+                    "outline-variant": "#444748",
+                    "surface-bright": "#393939",
+                    "secondary": "#ffb4a8",
+                    "on-background": "#e4e2e1",
+                    "on-secondary-container": "#5c0000",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-surface-variant": "#c4c7c7",
+                    "on-secondary": "#690100",
+                    "surface-variant": "#353535",
+                    "surface-container-low": "#1b1c1c",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "inverse-surface": "#e4e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#e5e2e1",
+                    "primary": "#c9c6c5",
+                    "surface-tint": "#c9c6c5",
+                    "surface-dim": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "outline": "#8e9192",
+                    "secondary-fixed-dim": "#ffb4a8",
+                    "on-secondary-fixed-variant": "#930100"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "md": "24px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-md": ["Montserrat"],
+                    "label-md": ["Montserrat"],
+                    "headline-md": ["Bebas Neue"],
+                    "body-lg": ["Montserrat"],
+                    "stats-number": ["Bebas Neue"],
+                    "headline-lg-mobile": ["Bebas Neue"],
+                    "headline-lg": ["Bebas Neue"],
+                    "title-lg": ["Montserrat"],
+                    "display-xl": ["Bebas Neue"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "stats-number": ["40px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "display-xl": ["80px", {"lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid #333333;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #FF0000;
+            transform: translateY(-8px);
+        }
+        .text-neon-glow {
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        .img-gradient-overlay {
+            background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.9) 100%);
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #e4e2e1;
+            overflow-x: hidden;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: inline-flex;
+            animation: marquee 20s linear infinite;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 transition-all duration-300" id="top-nav">
+  <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <div class="flex items-center gap-4">
+      <a href="index.html">
+        <img alt="HOUSE OF GAINS" class="h-12 md:h-14 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYOM4kxWfefKXlfWTBbSy_9nxLkP4GXvWPKSfs2TcoYMVuavvJNVv1odW9grmbWslluTVxWe03CaKK8Bz5vCLmOoOYkMlIQ2QGpWl7mm2A4XoxfgxiN2qfVqdNb1zln4w8O2HAn5_h6UVZX02e8ZhdVqtZBQTmCZGLYiPVSLeSUz_TmJMhuBM7zDEWwZczlyfVIZAS3Z_ojUkCEHBJ5j6AJ6gZcy7K0wKCkwQOF3QS8cvLxwO-qglZ1RO6SiZin9T94PuSOrwc8Fai">
+      </a>
+    </div>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-xl font-body-md text-body-md uppercase tracking-widest">
+      <a id="nav-home" class="text-on-surface hover:text-secondary transition-all duration-300" href="index.html">Home</a>
+      <a id="nav-story" class="text-on-surface hover:text-secondary transition-all duration-300" href="story.html">Story</a>
+      <a id="nav-programs" class="text-on-surface hover:text-secondary transition-all duration-300" href="programs.html">Programs</a>
+      <a id="nav-trainers" class="text-on-surface hover:text-secondary transition-all duration-300" href="trainers.html">Trainers</a>
+      <a id="nav-membership" class="text-on-surface hover:text-secondary transition-all duration-300" href="membership.html">Tiers</a>
+      <a id="nav-gallery" class="text-on-surface hover:text-secondary transition-all duration-300" href="gallery.html">Gallery</a>
+      <a id="nav-contact" class="text-on-surface hover:text-secondary transition-all duration-300" href="contact.html">Contact</a>
+      <a id="nav-app" class="text-on-surface hover:text-secondary transition-all duration-300" href="app.html">App</a>
+    </div>
+    <div class="flex items-center gap-md">
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest transition-all active:scale-95 hover:brightness-110 hidden sm:block join-btn">
+        JOIN NOW
+      </button>
+      <!-- Hamburger Menu Button -->
+      <button id="menu-btn" class="text-on-surface md:hidden focus:outline-none p-2" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-outline-variant/30 px-gutter py-4 transition-all duration-300">
+    <div class="flex flex-col gap-md font-body-md text-body-md uppercase tracking-widest py-2">
+      <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="index.html">Home</a>
+      <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="story.html">Story</a>
+      <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="programs.html">Programs</a>
+      <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
+      <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="membership.html">Tiers</a>
+      <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
+      <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-2" href="contact.html">Contact</a>
+      <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-2 border-t border-outline-variant/10 mt-2 pt-2" href="app.html">App</a>
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest mt-4 w-full join-btn">
+        JOIN NOW
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-16 flex-grow">
+    <!-- Hero Section -->
+    <section class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="Gym Background" class="w-full h-full object-cover opacity-40 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0pMbkgiqjYgM4pWUTVJs6GJXjEoTbx8gpw1K_KgKtIz-DoFj88HD9JeMpQZGx0gzFC5KmhUxsUSyC62MwQryBbCHNqaohAYmvOuIQ6jYQQb2NfPOZfjDu8x90o403O6KTOs9OKF3TrT6MdaAuof20bTZ5sEzTUnZvMhO9Y5tf4Xpysx7TubjarxfVM4wESghxxdHKG50ToWdcI2wdxnX6wNnXNSNhr-23699xc_rTYAJFtyRIaHI6fkAXNNtbw7xYYjktls_SuMO6">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent"></div>
+        </div>
+        <div class="relative z-10 text-center px-gutter">
+            <h1 class="font-display-xl text-display-xl uppercase tracking-tighter mb-4 text-on-surface md:text-[100px]">MEET THE ELITE</h1>
+            <p class="font-body-lg text-body-lg max-w-2xl mx-auto text-on-surface-variant uppercase tracking-widest text-sm">Architects of human potential. Forged in power, dedicated to your victory.</p>
+        </div>
+    </section>
+
+    <!-- Stats Ticker -->
+    <div class="bg-surface-container-low py-4 border-y border-outline-variant/20 mb-xl overflow-hidden">
+        <div class="flex whitespace-nowrap gap-xl items-center animate-marquee">
+            <div class="flex gap-md items-center">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">15+</span>
+                <span class="font-label-md text-label-md uppercase">Master Coaches</span>
+            </div>
+            <div class="flex gap-md items-center">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">200+</span>
+                <span class="font-label-md text-label-md uppercase">Combined Certifications</span>
+            </div>
+            <div class="flex gap-md items-center">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">50k+</span>
+                <span class="font-label-md text-label-md uppercase">Client Gains</span>
+            </div>
+            <div class="flex gap-md items-center">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">100%</span>
+                <span class="font-label-md text-label-md uppercase">Dedication</span>
+            </div>
+            <!-- Duplicate for loop -->
+            <div class="flex gap-md items-center">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">15+</span>
+                <span class="font-label-md text-label-md uppercase">Master Coaches</span>
+            </div>
+            <div class="flex gap-md items-center">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">200+</span>
+                <span class="font-label-md text-label-md uppercase">Combined Certifications</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trainers Grid -->
+    <section class="max-w-container-max mx-auto px-gutter pb-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+            <!-- Trainer Card 1 -->
+            <div class="glass-card group overflow-hidden scroll-reveal" data-bio="Marcus Vane has 15+ years of training competitive bodybuilders. His hypertrophy protocols are scientifically optimized for maximum muscle density. He has coached over 20 IFBB pros.">
+                <div class="relative h-[450px] overflow-hidden">
+                    <img alt="Trainer Marcus" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeUSgtc9qcAXdcuH65ABHAqkdlYfqD3JgLYTdUrLk_XYCpAMsDjBQrYiwiHOy7p2IvQkO3ZUJeMNcSRULQlTrPjnzPPslDzSybcoalbszgs1aw_hEA65t53ac5NGoC1T1renNqAw8xX-DSQYwURxITbvRlCEVb2VbQHHT2ID8FhcvpHFJsIQ8OpqjAL0LDw9MH1IUadMgb7nNdheKV3Ml355RpMKqnnlITo4RKusXMHlUvUCit6LqV4VQQQAHgRsHRKVhXlmj1c7gv">
+                    <div class="absolute inset-0 img-gradient-overlay flex flex-col justify-end p-md">
+                        <span class="text-[#FF0000] font-label-md text-label-md uppercase mb-2">Lead Strategist</span>
+                        <h3 class="font-headline-lg text-headline-lg uppercase mb-1">Marcus Vane</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Bodybuilding &amp; Hypertrophy</p>
+                    </div>
+                </div>
+                <div class="p-md space-y-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">IFBB Pro</span>
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">NASM-CPT</span>
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">Nutrition Spec.</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-md border-t border-outline-variant/30">
+                        <div class="flex gap-sm">
+                            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined text-xl">public</span></a>
+                            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined text-xl">movie</span></a>
+                        </div>
+                        <button class="font-label-md text-label-md text-[#FF0000] uppercase hover:underline view-bio-btn">View Bio</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Trainer Card 2 -->
+            <div class="glass-card group overflow-hidden scroll-reveal" data-bio="Elena Thorne is a former Olympic lifter specializing in explosive power development and conditioning. She conducts metabolic conditioning clinics and peak velocity strength testing.">
+                <div class="relative h-[450px] overflow-hidden">
+                    <img alt="Trainer Elena" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw4VfvqPYSSAcQ55ufwWvvXzNjbGFBbNFLb-sjlg3ZKwPq4szQqkDixdoEPLMQ0ezG_JqU1LT-ppidEWPRovLbwnW5amLVAQ9DAzvf6Z6yesx54vPwtU9JvKz6aCxBrSJMSQ5Vv-DSuL1TRgEs5fcycJww1aboI8YBbpt_xhIkGnuWZDzZsRF_jcdncrN3-WZULwVG_Tq1HUZSDg0ly-voVKbSoYslNg1IbX9P4aMxOnJv4H2qrr0A_8aJTBdm7wBGBHKLYB8FHwO4">
+                    <div class="absolute inset-0 img-gradient-overlay flex flex-col justify-end p-md">
+                        <span class="text-[#FF0000] font-label-md text-label-md uppercase mb-2">Elite Performance</span>
+                        <h3 class="font-headline-lg text-headline-lg uppercase mb-1">Elena Thorne</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Strength &amp; Conditioning</p>
+                    </div>
+                </div>
+                <div class="p-md space-y-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">CSCS</span>
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">Olympic Lifting</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-md border-t border-outline-variant/30">
+                        <div class="flex gap-sm">
+                            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined text-xl">public</span></a>
+                            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined text-xl">alternate_email</span></a>
+                        </div>
+                        <button class="font-label-md text-label-md text-[#FF0000] uppercase hover:underline view-bio-btn">View Bio</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Trainer Card 3 -->
+            <div class="glass-card group overflow-hidden scroll-reveal" data-bio="Jaxson Reed's biomechanical analysis helps powerlifters break records safely and efficiently. He holds a degree in Kinesiology and trains elite raw powerlifters.">
+                <div class="relative h-[450px] overflow-hidden">
+                    <img alt="Trainer Jaxson" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCRVf7b-9ROKMBqEnMReK6x7rq7A6nG5XiMcd4PxFeULuOkdeOlrBLXfRnHswSYW04RusigXtKM2bMzYd6BDHdtWYlaPGpJOsE7js4D9bbzlSc1F1PMOpk7ZRgejaaEi5ihhe7zbO0gC6mWDVpP3JZ04TPWtCt0hcdvrsKxGQfJ6VGxU4yQPv_oHRhSpKbCU2oRwFpbn1NKCR2xdVGuuNFv1NvBnMN9-2WvEffN7K7V1scwtQ8UerSSIvHX605jMyjewOQQbyc5M-3">
+                    <div class="absolute inset-0 img-gradient-overlay flex flex-col justify-end p-md">
+                        <span class="text-[#FF0000] font-label-md text-label-md uppercase mb-2">Power Dynamics</span>
+                        <h3 class="font-headline-lg text-headline-lg uppercase mb-1">Jaxson Reed</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Powerlifting &amp; Mechanics</p>
+                    </div>
+                </div>
+                <div class="p-md space-y-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">USAPL Coach</span>
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">BSc Kinesiology</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-md border-t border-outline-variant/30">
+                        <div class="flex gap-sm">
+                            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined text-xl">public</span></a>
+                            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined text-xl">fitness_center</span></a>
+                        </div>
+                        <button class="font-label-md text-label-md text-[#FF0000] uppercase hover:underline view-bio-btn">View Bio</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Trainer Card 4 -->
+            <div class="glass-card group overflow-hidden scroll-reveal" data-bio="Sarah Chen combines yoga, mobility therapy, and active release to optimize athlete recovery and longevity. She runs our mobility program for high-intensity lifestyles.">
+                <div class="relative h-[450px] overflow-hidden">
+                    <img alt="Trainer Sarah" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE4oSMak3Vd3tkSkCspvb1u7VTrsDxgfIaPcouf_PdPqLpQ_VNaQiZLOpmhwzDvlgIEtRE8mH2QwqWncbWhmyHN9E7aTuODN85Wala-NKVfrGmS3g0VxtL1ctyYCwDDEsqewT3qimO3HQQwfmc9W1QaJP9PINqU3sdGNoxbyo53IWcMUWTVEZSnxXf6iI6AEKAZ9LkzXWvrE7YUcD7gJ5s0WT8LHUhlb17P4OqnQmIOkGwPMN13y0kSrVCdWAPMvHfuVLhsy47Bu9_">
+                    <div class="absolute inset-0 img-gradient-overlay flex flex-col justify-end p-md">
+                        <span class="text-[#FF0000] font-label-md text-label-md uppercase mb-2">Holistic Performance</span>
+                        <h3 class="font-headline-lg text-headline-lg uppercase mb-1">Sarah Chen</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Mobility &amp; Longevity</p>
+                    </div>
+                </div>
+                <div class="p-md space-y-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">RYT 500</span>
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">Mobility Pro</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-md border-t border-outline-variant/30">
+                        <div class="flex gap-sm">
+                            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined text-xl">public</span></a>
+                            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined text-xl">self_improvement</span></a>
+                        </div>
+                        <button class="font-label-md text-label-md text-[#FF0000] uppercase hover:underline view-bio-btn">View Bio</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Trainer Card 5 -->
+            <div class="glass-card group overflow-hidden scroll-reveal" data-bio="Leo Drax is a combat sports conditioning specialist training professional MMA fighters. He is an ISSA CPT and holds a black belt in Jiu Jitsu.">
+                <div class="relative h-[450px] overflow-hidden">
+                    <img alt="Trainer Leo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI5mDNQMeiaPfoGiz2R-YY6FZUM-1QsYGfsXoRf_8Iy2wUAiRndrunAH_W0T2RY4TIbyQWx81bxuItNDLtCA5rmvL1YVscJOKjWgAdbJxIz5jYkHo6866_zp6NiQCpOcLr9ewqyewyPzD4bzbDQK30LCX2SMfcHDf-8z8Vb8agkeZ6Ye7W8xflT-NLPpt-dMwbkJ88id9Bbb0ut8I81g92eT4AF7GRG6K8c41GQqd8J8MmeGZgjJ3DINGY9miBXyH8H5gqJSpSq0sN">
+                    <div class="absolute inset-0 img-gradient-overlay flex flex-col justify-end p-md">
+                        <span class="text-[#FF0000] font-label-md text-label-md uppercase mb-2">Combat Ready</span>
+                        <h3 class="font-headline-lg text-headline-lg uppercase mb-1">Leo Drax</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-4">MMA Conditioning</p>
+                    </div>
+                </div>
+                <div class="p-md space-y-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">Black Belt</span>
+                        <span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-[10px] uppercase">ISSA CPT</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-md border-t border-outline-variant/30">
+                        <div class="flex gap-sm">
+                            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined text-xl">public</span></a>
+                            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined text-xl">sports_martial_arts</span></a>
+                        </div>
+                        <button class="font-label-md text-label-md text-[#FF0000] uppercase hover:underline view-bio-btn">View Bio</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Join Team Card -->
+            <div class="glass-card flex flex-col items-center justify-center p-xl text-center border-dashed border-2 border-outline-variant/50 hover:border-[#FF0000] group scroll-reveal">
+                <div class="w-16 h-16 rounded-full border border-outline-variant flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl text-on-surface">add</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md uppercase mb-2 text-on-surface">Join the Ranks</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-lg text-sm">Are you an elite trainer? House of Gains is looking for the best in the industry.</p>
+                <button class="border border-[#FF0000] text-[#FF0000] font-label-md text-label-md px-8 py-3 uppercase hover:bg-[#FF0000] hover:text-white transition-all click-apply">Apply Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bio Modal -->
+    <div id="bio-modal" class="fixed inset-0 z-[110] flex items-center justify-center hidden bg-black/90 backdrop-blur-md px-gutter">
+        <div class="glass-card max-w-md w-full p-xl relative border border-outline-variant/30 space-y-md">
+            <button class="absolute top-4 right-4 text-on-surface-variant hover:text-[#FF0000]" id="close-bio-modal">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+            <div class="space-y-sm">
+                <span class="text-[#FF0000] font-label-md text-label-md uppercase" id="bio-specialty"></span>
+                <h3 class="font-headline-lg text-headline-lg uppercase text-on-surface" id="bio-name"></h3>
+                <p class="font-body-md text-on-surface leading-relaxed text-sm pt-sm" id="bio-text"></p>
+            </div>
+            <button class="w-full bg-[#FF0000] text-white py-md font-bold uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all join-btn">
+                Book Session With Coach
+            </button>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="bg-[#FF0000] py-xl text-center">
+        <div class="max-w-3xl mx-auto px-gutter">
+            <h2 class="font-display-xl text-headline-lg uppercase text-white mb-md">READY FOR TOTAL TRANSFORMATION?</h2>
+            <p class="font-body-lg text-body-lg text-white/90 mb-xl">Book a consultation with one of our master coaches and receive a personalized 90-day blueprint for elite performance.</p>
+            <div class="flex flex-col md:flex-row gap-md justify-center">
+                <button class="bg-black text-white font-body-md text-label-md px-12 py-4 uppercase font-bold tracking-widest hover:bg-white hover:text-black transition-all consultation-btn">BOOK CONSULTATION</button>
+                <a href="programs.html" class="inline-block border-2 border-white text-white font-body-md text-label-md px-12 py-4 uppercase font-bold tracking-widest hover:bg-white hover:text-[#FF0000] transition-all text-center">EXPLORE PROGRAMS</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-xl mt-auto bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant">
+    <div class="flex flex-col items-center gap-md px-gutter text-center">
+        <div class="font-headline-lg text-headline-lg text-on-surface">HOUSE OF GAINS</div>
+        <div class="flex flex-wrap justify-center gap-md">
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Membership FAQ</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Careers</a>
+        </div>
+        <div class="flex gap-md mt-md">
+            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined">movie</span></a>
+            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors" href="#"><span class="material-symbols-outlined">close</span></a>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-md">© 2024 HOUSE OF GAINS. FORGED IN POWER.</p>
+    </div>
+</footer>
+
+<script type="module" src="/main.js"></script>
+<script>
+    // Custom Trainer Bio Modal Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const bioModal = document.getElementById('bio-modal');
+        const bioSpecialty = document.getElementById('bio-specialty');
+        const bioName = document.getElementById('bio-name');
+        const bioText = document.getElementById('bio-text');
+        const closeBioBtn = document.getElementById('close-bio-modal');
+
+        document.querySelectorAll('.view-bio-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const card = btn.closest('.glass-card');
+                const name = card.querySelector('h3').textContent;
+                const specialty = card.querySelector('span').textContent;
+                const bio = card.getAttribute('data-bio');
+
+                bioName.textContent = name;
+                bioSpecialty.textContent = specialty;
+                bioText.textContent = bio;
+
+                bioModal.classList.remove('hidden');
+            });
+        });
+
+        if (closeBioBtn) {
+            closeBioBtn.addEventListener('click', () => {
+                bioModal.classList.add('hidden');
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === bioModal) {
+                bioModal.classList.add('hidden');
+            }
+        });
+
+        // Consultation Button Click
+        document.querySelectorAll('.consultation-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById('trial-modal').classList.remove('hidden');
+            });
+        });
+
+        // Apply Ranks Click
+        document.querySelectorAll('.click-apply').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert("Thank you for your interest in joining House of Gains! Please email your resume and certifications to careers@houseofgains.com.");
+            });
+        });
+    });
+</script>
+</body>
+</html>

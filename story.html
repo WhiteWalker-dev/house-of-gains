@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>About Us | HOUSE OF GAINS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#211b00",
+                        "on-error": "#690005",
+                        "surface-container": "#1f2020",
+                        "secondary-container": "#fddc00",
+                        "on-primary-fixed-variant": "#474646",
+                        surface: "#131313",
+                        "secondary-fixed": "#ffe24a",
+                        "primary-container": "#0a0a0a",
+                        "on-surface": "#e4e2e1",
+                        tertiary: "#c8c6c5",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-container": "#0a0a0a",
+                        "on-primary-container": "#7b7979",
+                        "inverse-primary": "#5f5e5e",
+                        background: "#131313",
+                        "on-primary": "#313030",
+                        error: "#ffb4ab",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary-container": "#7a7979",
+                        "outline-variant": "#444748",
+                        "surface-bright": "#393939",
+                        secondary: "#fff9ed",
+                        "on-background": "#e4e2e1",
+                        "on-secondary-container": "#706000",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary": "#393000",
+                        "surface-variant": "#353535",
+                        "surface-container-low": "#1b1c1c",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "inverse-surface": "#e4e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#e5e2e1",
+                        primary: "#c9c6c5",
+                        "surface-tint": "#c9c6c5",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-fixed-dim": "#c9c6c5",
+                        outline: "#8e9192",
+                        "secondary-fixed-dim": "#e3c600",
+                        "on-secondary-fixed-variant": "#524600"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        gutter: "24px",
+                        base: "8px",
+                        md: "24px",
+                        lg: "48px",
+                        xl: "80px",
+                        sm: "12px",
+                        xs: "4px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-md": ["Bebas Neue"],
+                        "body-lg": ["Montserrat"],
+                        "stats-number": ["Bebas Neue"],
+                        "headline-lg-mobile": ["Bebas Neue"],
+                        "headline-lg": ["Bebas Neue"],
+                        "title-lg": ["Montserrat"],
+                        "display-xl": ["Bebas Neue"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}],
+                        "label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.1em", fontWeight: "600"}],
+                        "headline-md": ["32px", {lineHeight: "32px", fontWeight: "400"}],
+                        "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}],
+                        "stats-number": ["40px", {lineHeight: "40px", fontWeight: "400"}],
+                        "headline-lg-mobile": ["36px", {lineHeight: "36px", fontWeight: "400"}],
+                        "headline-lg": ["48px", {lineHeight: "48px", letterSpacing: "0.02em", fontWeight: "400"}],
+                        "title-lg": ["20px", {lineHeight: "28px", fontWeight: "700"}],
+                        "display-xl": ["80px", {lineHeight: "80px", letterSpacing: "0.02em", fontWeight: "400"}]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            background-color: #0A0A0A;
+            color: #e4e2e1;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid #333333;
+        }
+        .text-glow-red {
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        }
+        .bg-red-gradient {
+            background: linear-gradient(135deg, #FF0000 0%, #930100 100%);
+        }
+        .etched-border {
+            border: 1px solid #333333;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-secondary-container selection:text-white flex flex-col min-h-screen">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 transition-all duration-300" id="top-nav">
+  <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+    <div class="flex items-center gap-4">
+      <a href="index.html">
+        <img alt="HOUSE OF GAINS" class="h-12 md:h-14 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYOM4kxWfefKXlfWTBbSy_9nxLkP4GXvWPKSfs2TcoYMVuavvJNVv1odW9grmbWslluTVxWe03CaKK8Bz5vCLmOoOYkMlIQ2QGpWl7mm2A4XoxfgxiN2qfVqdNb1zln4w8O2HAn5_h6UVZX02e8ZhdVqtZBQTmCZGLYiPVSLeSUz_TmJMhuBM7zDEWwZczlyfVIZAS3Z_ojUkCEHBJ5j6AJ6gZcy7K0wKCkwQOF3QS8cvLxwO-qglZ1RO6SiZin9T94PuSOrwc8Fai">
+      </a>
+    </div>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-xl font-body-md text-body-md uppercase tracking-widest">
+      <a id="nav-home" class="text-on-surface hover:text-secondary transition-all duration-300" href="index.html">Home</a>
+      <a id="nav-story" class="text-on-surface hover:text-secondary transition-all duration-300" href="story.html">Story</a>
+      <a id="nav-programs" class="text-on-surface hover:text-secondary transition-all duration-300" href="programs.html">Programs</a>
+      <a id="nav-trainers" class="text-on-surface hover:text-secondary transition-all duration-300" href="trainers.html">Trainers</a>
+      <a id="nav-membership" class="text-on-surface hover:text-secondary transition-all duration-300" href="membership.html">Tiers</a>
+      <a id="nav-gallery" class="text-on-surface hover:text-secondary transition-all duration-300" href="gallery.html">Gallery</a>
+      <a id="nav-contact" class="text-on-surface hover:text-secondary transition-all duration-300" href="contact.html">Contact</a>
+      <a id="nav-app" class="text-on-surface hover:text-secondary transition-all duration-300" href="app.html">App</a>
+    </div>
+    <div class="flex items-center gap-md">
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest transition-all active:scale-95 hover:brightness-110 hidden sm:block join-btn">
+        JOIN NOW
+      </button>
+      <!-- Hamburger Menu Button -->
+      <button id="menu-btn" class="text-on-surface md:hidden focus:outline-none p-2" aria-label="Toggle Menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-outline-variant/30 px-gutter py-4 transition-all duration-300">
+    <div class="flex flex-col gap-md font-body-md text-body-md uppercase tracking-widest py-2">
+      <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="index.html">Home</a>
+      <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="story.html">Story</a>
+      <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="programs.html">Programs</a>
+      <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
+      <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="membership.html">Tiers</a>
+      <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
+      <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-2" href="contact.html">Contact</a>
+      <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-2 border-t border-outline-variant/10 mt-2 pt-2" href="app.html">App</a>
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest mt-4 w-full join-btn">
+        JOIN NOW
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow pt-16">
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover brightness-[0.3]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCex7CHFw_ifyVjklLAF8qUw6jWvBmevoqFlojyuIPTsVghPYJe6r5gkbKnTrdU37UHy6GWHK04m9_t1LJQ5Ky7JaOAF4v4uWpRBb6dA8cfa_be3pKslqyIclXqLa9YMtnnF6497CxHC-HOc1pna3EqmBQ7Gvecfl5WCoQ4ZTbk7PYr7FxypM751KbTxVkcxJRl1S-NfXVzYXLHaGkLI4cUD2kD3UYbJ5SVgE4D5M1-tMgsdwE4vdxTOf_XAH-kULpGAl9SiG901Jax">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]/50"></div>
+        </div>
+        <div class="relative z-10 text-center px-gutter">
+            <h1 class="font-display-xl text-display-xl uppercase tracking-tighter mb-md scroll-reveal active">
+                Forged in <span class="text-[#FF0000] text-glow-red">Power</span>
+            </h1>
+            <p class="font-body-lg text-body-lg max-w-2xl mx-auto text-on-surface-variant mb-lg scroll-reveal active" style="transition-delay: 0.2s;">
+                House of Gains is more than a facility. It is a sanctuary for those who refuse to settle for anything less than elite performance.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="py-xl px-gutter max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+        <div class="scroll-reveal">
+            <h2 class="font-headline-lg text-headline-lg uppercase mb-md tracking-widest text-secondary">Our Mission</h2>
+            <div class="w-20 h-1 bg-[#FF0000] mb-lg"></div>
+            <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
+                We exist to unlock the latent potential within every athlete. At House of Gains, we believe that fitness is the ultimate expression of human will. Our mission is to provide an uncompromising environment where the elite can push beyond their perceived limits.
+            </p>
+            <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                By combining cutting-edge science with the raw, old-school grit of iron and sweat, we create a space where transformation isn't just a goal—it's an inevitability.
+            </p>
+        </div>
+        <div class="relative scroll-reveal" style="transition-delay: 0.3s;">
+            <div class="absolute -top-4 -left-4 w-full h-full border border-secondary/20 z-0"></div>
+            <img class="relative z-10 w-full aspect-video object-cover etched-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDc8gMdjAXTLhof8Vz_3X9UX3XUEBrGUJR2yD1dIdoqsxFOsf-xEFhU1tbmBpuN-291LzI8mrFqROXPj28xiUxQg82CWrWJ0F5StkX85H0e6XO6qD8gjPEhD0OVrnyJOZig1xxUGBb7YQvo45CJ9c4eWtZyBJa0sxq21xm8bFkNJ1SRSWkwd894_Hxns6MsR23Ag8oxFJDM1uonHUIwc9leAkFwuSnHQat-iPFjWqeURhxl4TK7mYH08w9dyjElz_V4RcTBKawt4oF">
+        </div>
+    </section>
+
+    <!-- Data Ticker -->
+    <div class="bg-surface-container-low py-md overflow-hidden whitespace-nowrap border-y border-outline-variant/20">
+        <div class="flex animate-[marquee_20s_linear_infinite] gap-xl items-center">
+            <div class="flex items-center gap-sm">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">50+</span>
+                <span class="font-headline-md text-headline-md uppercase">Elite Trainers</span>
+            </div>
+            <div class="flex items-center gap-sm">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">24/7</span>
+                <span class="font-headline-md text-headline-md uppercase">Access</span>
+            </div>
+            <div class="flex items-center gap-sm">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">100%</span>
+                <span class="font-headline-md text-headline-md uppercase">Privacy Guaranteed</span>
+            </div>
+            <div class="flex items-center gap-sm">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">15k</span>
+                <span class="font-headline-md text-headline-md uppercase">SQ FT FACILITY</span>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="flex items-center gap-sm">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">50+</span>
+                <span class="font-headline-md text-headline-md uppercase">Elite Trainers</span>
+            </div>
+            <div class="flex items-center gap-sm">
+                <span class="font-stats-number text-stats-number text-[#FF0000]">24/7</span>
+                <span class="font-headline-md text-headline-md uppercase">Access</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Facility (Bento Style) -->
+    <section class="py-xl px-gutter max-w-container-max mx-auto">
+        <div class="text-center mb-xl">
+            <h2 class="font-headline-lg text-headline-lg uppercase tracking-tighter mb-sm">The Facility</h2>
+            <p class="text-on-surface-variant font-body-md uppercase tracking-widest">Where technology meets raw iron</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-md h-auto md:h-[600px]">
+            <div class="md:col-span-8 relative group overflow-hidden etched-border scroll-reveal">
+                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB5Pcyv3WTrYvW_Y-TCb1mj4Y4SzNS7p5aPb0wAQbZLHLxJkhzRlosCMWnu-d81k9CD5_KkKFw2d4IRXAuLYhQw0EqEaNp8ZdxtYSRjzKd2I6Jl1j3PbeHzJH1SxoCL5Sv7hLlXvnNeBw24sP5LuuDiHEjm8AASEgef-H-9Y-DY7zu-uYbNNj4f_YIFNVCzmo79vB6ZVQ6i78SLtLAsCXmTiUW4XUoBYOE50H3avwXKsAR-b6DfF75gkkv6MDdIJQuma9_jjPpwSt4">
+                <div class="absolute bottom-0 left-0 w-full p-md bg-gradient-to-t from-black/80 to-transparent">
+                    <h3 class="font-headline-md text-headline-md uppercase text-on-surface">Pro-Grade Iron</h3>
+                    <p class="text-on-surface-variant text-sm">Eleiko platforms and Rogue strength systems.</p>
+                </div>
+            </div>
+            <div class="md:col-span-4 grid grid-rows-2 gap-md">
+                <div class="relative group overflow-hidden etched-border scroll-reveal" style="transition-delay: 0.1s;">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9IVfp6wY0r5_7nGqr0iNUBbBd3s3dagpqo58OcbYVsdv0s4fR_rh36-DzNNE6ffTgTOpaI3pq26BwVeZrlcT-v0FFOhZ8BZzYTMq9F4boxZ8aWbzXdwYCZT8z-cUggMKNbWyfw8vVy0VA4Rj8Y8TG18F3OO6mBpUt7BMPdGfxjhhDKBEK2eUrWMzUFy3Ghf2PBq4ewsnbU5Cc2kYksue55AInbAdffhBuxAM42PtQryxJ_NzvhtGvsW_gCWI1B_g_LIiMn50XoSkb">
+                    <div class="absolute bottom-0 left-0 w-full p-md bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="font-headline-md text-headline-md uppercase text-on-surface">Recovery Suite</h3>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden etched-border scroll-reveal" style="transition-delay: 0.2s;">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzAVIu4Vbfvggk3JHiJw650RCMxX8HrdSuq_MJib5bP03dOQ3obPRRjbBli3kT-a-mOkoviTaPPGEPz30PL_YkGtbNyscoqb4iHUrG6rOijcw0jHwZWmwgO95gdr_TfCSzygrizRKCmvW8-3nrjL5RFm5RPn1DoXdcUWa1fRN9vgOnH10PqpjkmtNSIqm-0T8hxfmhMlFfYnHTOcn_PFKgx_vH6kIPfHJJraKUrFno4ghMjjkMPdY9VdVCbtWfU12Ev8l7GjTBXIWC">
+                    <div class="absolute bottom-0 left-0 w-full p-md bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="font-headline-md text-headline-md uppercase text-on-surface">Biometric Cardio</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Story -->
+    <section class="py-xl relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-surface-container-low/30 -skew-x-12 translate-x-1/4"></div>
+        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-xl items-center relative z-10">
+            <div class="order-2 lg:order-1 scroll-reveal">
+                <div class="glass-panel p-lg">
+                    <h2 class="font-headline-lg text-headline-lg uppercase mb-md tracking-widest text-secondary">The Story</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md italic">
+                        "I wanted a place that didn't just have weights, but had a soul of steel. A place where the noise of the world fades, and the only thing left is your heartbeat and the iron."
+                    </p>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-lg">
+                        Founded in 2018 by performance specialist Marcus Vane, House of Gains began as a private garage experiment. Tired of commercial gyms that prioritized memberships over results, Vane built a haven for serious training. Today, that vision has expanded into an 15,000 square foot fortress, serving professional athletes and those who train like them.
+                    </p>
+                    <div class="flex gap-md items-center">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-[#FF0000]">
+                            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzK-fXFmGVN7YCYCPBksROPyWWxMYtAg3QlUCMHaG0ohxUplBWPEMuOcRsUnp0feHbh1f5XyRkJ5_FLCkAB82LiZDEwRbaSW_IIkDFQRatp_TPmGyTVLCBQHOuKgkY8n23h7roMfBgtGlAT12C39sj4nklOLoCjQQkQ3CjXEDfGIHdStukBHxR6TlPiyQ0Oq0q4p-iOsfMtdlevusTOLSIoWrjhWYKYaql2x3Ii9CoR0XFvswGCHh-BhQ-Ikc0f4a9w7ZAf6KFOASI">
+                        </div>
+                        <div>
+                            <p class="font-bold text-secondary uppercase">Marcus Vane</p>
+                            <p class="text-sm text-on-surface-variant">Founder &amp; Head Performance Coach</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 scroll-reveal" style="transition-delay: 0.3s;">
+                <img class="w-full aspect-[4/5] object-cover etched-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7wTIrT-WYYgpNBQX28oCfvlbOrqVPIyR1a0Wwg6TWdRgrpMA4TQt4g1pg8FJ9giyeOe5aHBzHCVXy6QVtuhaw9OqYfEirSuE4e-uPwXcs8DqIYkAiN6aqmUbAYJeqCCcIzqUXkUznCo0qghbqlkV6jsGwY_M_LgJg19WxzjKAVKiaARGpJBDHnpit1KMQuiWMHjGYN6wHsfkjRmXlkm60WYNiYquRvk5Gpd59ohGhrDhsD2w2H_JFVoG4dyEZgAAAv0ecjJQw45i1">
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-xl bg-surface-container-lowest">
+        <div class="max-w-3xl mx-auto text-center px-gutter">
+            <h2 class="font-display-xl text-headline-lg uppercase tracking-widest mb-md">Ready to Forge Your Legacy?</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-xl">Applications for elite membership are currently open. Join the collective.</p>
+            <div class="flex flex-col sm:flex-row gap-md justify-center">
+                <button class="bg-[#FF0000] text-white px-xl py-md font-bold uppercase tracking-widest transition-all hover:scale-105 active:scale-95 join-btn">Book a Tour</button>
+                <a href="programs.html" class="inline-block border border-outline px-xl py-md font-bold uppercase tracking-widest transition-all hover:bg-secondary/10 active:scale-95 text-center">View Programs</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-xl mt-auto bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant">
+    <div class="flex flex-col items-center gap-md px-gutter text-center">
+        <div class="font-headline-lg text-headline-lg text-on-surface tracking-widest">HOUSE OF GAINS</div>
+        <div class="flex flex-wrap justify-center gap-md mb-md">
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Membership FAQ</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Careers</a>
+        </div>
+        <div class="flex gap-lg mb-lg">
+            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors duration-300" href="#"><span class="material-symbols-outlined">brand_awareness</span></a>
+            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors duration-300" href="#"><span class="material-symbols-outlined">play_circle</span></a>
+            <a class="text-on-surface-variant hover:text-[#FF0000] transition-colors duration-300" href="#"><span class="material-symbols-outlined">close</span></a>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant opacity-60">
+            © 2024 HOUSE OF GAINS. FORGED IN POWER.
+        </p>
+    </div>
+</footer>
+
+<script type="module" src="/main.js"></script>
+</body>
+</html>
