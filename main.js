@@ -188,41 +188,38 @@ function createModals() {
 }
 
 function setupModalTriggers() {
-    // Open Join Modal
-    document.querySelectorAll('.join-btn, button:contains("JOIN NOW"), button:contains("Select Tier")').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            // Determine tier if click was a tier button
-            const cardElement = btn.closest('.glass-card');
-            if (cardElement) {
-                const tierNameEl = cardElement.querySelector('span');
-                if (tierNameEl) {
-                    const tierText = tierNameEl.textContent.trim().toLowerCase();
-                    const selectEl = document.getElementById('join-tier');
-                    if (selectEl) {
-                        if (tierText.includes('essential')) selectEl.value = 'essential';
-                        else if (tierText.includes('vanguard')) selectEl.value = 'vanguard';
-                        else if (tierText.includes('elite')) selectEl.value = 'elite';
-                    }
-                }
-            }
-            document.getElementById('join-modal').classList.remove('hidden');
-        });
-    });
-
-    // Special trigger selection for join buttons
-    document.querySelectorAll('button').forEach(btn => {
+    // Open Join Modal for buttons with join class or specific texts
+    document.querySelectorAll('.join-btn, button').forEach(btn => {
+        const isJoinBtn = btn.classList.contains('join-btn');
         const txt = btn.textContent.trim().toUpperCase();
-        if (txt === 'JOIN NOW' || txt === 'SELECT TIER') {
+        
+        if (isJoinBtn || txt === 'JOIN NOW' || txt === 'SELECT TIER') {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                document.getElementById('join-modal').classList.remove('hidden');
+                // Determine tier if click was a tier button
+                const cardElement = btn.closest('.glass-card');
+                if (cardElement) {
+                    const tierNameEl = cardElement.querySelector('span');
+                    if (tierNameEl) {
+                        const tierText = tierNameEl.textContent.trim().toLowerCase();
+                        const selectEl = document.getElementById('join-tier');
+                        if (selectEl) {
+                            if (tierText.includes('essential')) selectEl.value = 'essential';
+                            else if (tierText.includes('vanguard')) selectEl.value = 'vanguard';
+                            else if (tierText.includes('elite')) selectEl.value = 'elite';
+                        }
+                    }
+                }
+                const modal = document.getElementById('join-modal');
+                if (modal) modal.classList.remove('hidden');
             });
         }
+        
         if (txt === 'BOOK FREE TRIAL' || txt === 'BOOK A TOUR' || txt === 'BOOK CONSULTATION') {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                document.getElementById('trial-modal').classList.remove('hidden');
+                const modal = document.getElementById('trial-modal');
+                if (modal) modal.classList.remove('hidden');
             });
         }
     });
