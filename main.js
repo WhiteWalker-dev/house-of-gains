@@ -1,17 +1,81 @@
 // House of Gains - Main Shared Script
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu Toggle
+    // 1. Mobile Menu Toggle & Premium Drawer
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-menu-btn');
+    
+    // Dynamically create backdrop overlay if not present
+    let overlay = document.getElementById('mobile-menu-overlay');
+    if (!overlay && mobileMenu) {
+        overlay = document.createElement('div');
+        overlay.id = 'mobile-menu-overlay';
+        overlay.className = 'fixed inset-0 z-40 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300';
+        document.body.appendChild(overlay);
+    }
 
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+    function openMobileMenu() {
+        if (mobileMenu) {
+            mobileMenu.classList.remove('translate-x-full', 'hidden');
+            mobileMenu.classList.add('translate-x-0');
+        }
+        if (overlay) {
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+        }
+        if (menuBtn) {
             const icon = menuBtn.querySelector('span');
-            if (icon) {
-                icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+            if (icon) icon.textContent = 'close';
+        }
+        document.body.classList.add('overflow-hidden');
+    }
+
+    function closeMobileMenu() {
+        if (mobileMenu) {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+        }
+        if (overlay) {
+            overlay.classList.remove('opacity-100');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+        }
+        if (menuBtn) {
+            const icon = menuBtn.querySelector('span');
+            if (icon) icon.textContent = 'menu';
+        }
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    if (menuBtn) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = mobileMenu && mobileMenu.classList.contains('translate-x-0');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
             }
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    }
+
+    if (mobileMenu) {
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
         });
     }
 

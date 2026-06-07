@@ -143,7 +143,7 @@
             animation: marquee 20s linear infinite;
         }
     </style>
-  <script type="module" crossorigin src="/house-of-gains/assets/main-DwWLAaNe.js"></script>
+  <script type="module" crossorigin src="/house-of-gains/assets/main-BUQ1O5ER.js"></script>
 </head>
 <body class="flex flex-col min-h-screen">
 
@@ -177,20 +177,36 @@
     </div>
   </div>
   
-  <!-- Mobile Navigation Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-outline-variant/30 px-gutter py-4 transition-all duration-300">
-    <div class="flex flex-col gap-md font-body-md text-body-md uppercase tracking-widest py-2">
-      <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="index.html">Home</a>
-      <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="story.html">Story</a>
-      <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="programs.html">Programs</a>
-      <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
-      <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="membership.html">Tiers</a>
-      <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
-      <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-2" href="contact.html">Contact</a>
-      <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-2 border-t border-outline-variant/10 mt-2 pt-2" href="app.html">App</a>
-      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest mt-4 w-full join-btn">
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-black/95 backdrop-blur-xl border-l border-outline-variant/30 p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out hidden">
+    <div>
+      <div class="flex justify-between items-center mb-10">
+        <span class="font-headline-md text-headline-md uppercase text-white tracking-wider"><span class="text-neon-red">HOUSE</span> OF GAINS</span>
+        <button id="close-menu-btn" class="text-on-surface hover:text-neon-red p-2 focus:outline-none" aria-label="Close Menu">
+          <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col gap-6 font-body-md text-body-md uppercase tracking-widest">
+        <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="index.html">Home</a>
+        <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="story.html">Story</a>
+        <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="programs.html">Programs</a>
+        <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
+        <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="membership.html">Tiers</a>
+        <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
+        <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="contact.html">Contact</a>
+        <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-1" href="app.html">App</a>
+      </div>
+    </div>
+    
+    <div class="space-y-6">
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-3 tracking-widest w-full join-btn hover:brightness-110 active:scale-95 transition-all">
         JOIN NOW
       </button>
+      <div class="flex justify-center gap-lg text-on-surface-variant">
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">photo_camera</span></a>
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">smart_display</span></a>
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">close</span></a>
+      </div>
     </div>
   </div>
 </nav>
@@ -203,7 +219,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent"></div>
         </div>
         <div class="relative z-10 text-center px-gutter">
-            <h1 class="font-display-xl text-display-xl uppercase tracking-tighter mb-4 text-on-surface md:text-[100px]">MEET THE ELITE</h1>
+            <h1 class="font-display-xl text-4xl sm:text-6xl md:text-[100px] uppercase tracking-tighter mb-4 text-on-surface">MEET THE ELITE</h1>
             <p class="font-body-lg text-body-lg max-w-2xl mx-auto text-on-surface-variant uppercase tracking-widest text-sm">Architects of human potential. Forged in power, dedicated to your victory.</p>
         </div>
     </section>
@@ -376,14 +392,14 @@
     </section>
 
     <!-- Bio Modal -->
-    <div id="bio-modal" class="fixed inset-0 z-[110] flex items-center justify-center hidden bg-black/90 backdrop-blur-md px-gutter">
-        <div class="glass-card max-w-md w-full p-xl relative border border-outline-variant/30 space-y-md">
-            <button class="absolute top-4 right-4 text-on-surface-variant hover:text-[#FF0000]" id="close-bio-modal">
+    <div id="bio-modal" class="fixed inset-0 z-[110] flex items-center justify-center hidden bg-black/90 backdrop-blur-md px-4 py-6 overflow-y-auto">
+        <div class="glass-card max-w-md w-full p-6 md:p-xl relative border border-outline-variant/30 space-y-md my-auto">
+            <button class="absolute top-4 right-4 text-on-surface-variant hover:text-[#FF0000] p-2" id="close-bio-modal">
                 <span class="material-symbols-outlined text-2xl">close</span>
             </button>
             <div class="space-y-sm">
-                <span class="text-[#FF0000] font-label-md text-label-md uppercase" id="bio-specialty"></span>
-                <h3 class="font-headline-lg text-headline-lg uppercase text-on-surface" id="bio-name"></h3>
+                <span class="text-[#FF0000] font-label-md text-label-md uppercase block" id="bio-specialty"></span>
+                <h3 class="font-headline-lg text-3xl md:text-headline-lg uppercase text-on-surface" id="bio-name"></h3>
                 <p class="font-body-md text-on-surface leading-relaxed text-sm pt-sm" id="bio-text"></p>
             </div>
             <button class="w-full bg-[#FF0000] text-white py-md font-bold uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all join-btn">
@@ -395,7 +411,7 @@
     <!-- Call to Action -->
     <section class="bg-[#FF0000] py-xl text-center">
         <div class="max-w-3xl mx-auto px-gutter">
-            <h2 class="font-display-xl text-headline-lg uppercase text-white mb-md">READY FOR TOTAL TRANSFORMATION?</h2>
+            <h2 class="font-display-xl text-3xl sm:text-4xl md:text-headline-lg uppercase text-white mb-md">READY FOR TOTAL TRANSFORMATION?</h2>
             <p class="font-body-lg text-body-lg text-white/90 mb-xl">Book a consultation with one of our master coaches and receive a personalized 90-day blueprint for elite performance.</p>
             <div class="flex flex-col md:flex-row gap-md justify-center">
                 <button class="bg-black text-white font-body-md text-label-md px-12 py-4 uppercase font-bold tracking-widest hover:bg-white hover:text-black transition-all consultation-btn">BOOK CONSULTATION</button>
@@ -423,6 +439,17 @@
         <p class="font-body-md text-body-md text-on-surface-variant mt-md">© 2024 HOUSE OF GAINS. FORGED IN POWER.</p>
     </div>
 </footer>
+
+<!-- Mobile Floating Action Bar -->
+<div class="fixed bottom-4 left-4 right-4 z-40 bg-surface/90 backdrop-blur-md border border-outline-variant/30 p-4 rounded-xl flex items-center justify-between shadow-2xl md:hidden">
+  <div class="flex flex-col">
+    <span class="text-[9px] uppercase tracking-widest text-on-surface-variant font-bold">House of Gains</span>
+    <span class="text-xs font-bold text-white uppercase tracking-wider">Unleash Your Power</span>
+  </div>
+  <button class="bg-[#FF0000] text-white text-[10px] font-bold uppercase px-4 py-2 tracking-widest hover:brightness-110 active:scale-95 transition-all join-btn">
+    JOIN NOW
+  </button>
+</div>
 
 <script>
     // Custom Trainer Bio Modal Logic

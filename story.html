@@ -170,20 +170,36 @@
     </div>
   </div>
   
-  <!-- Mobile Navigation Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-outline-variant/30 px-gutter py-4 transition-all duration-300">
-    <div class="flex flex-col gap-md font-body-md text-body-md uppercase tracking-widest py-2">
-      <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="index.html">Home</a>
-      <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="story.html">Story</a>
-      <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="programs.html">Programs</a>
-      <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
-      <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="membership.html">Tiers</a>
-      <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
-      <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-2" href="contact.html">Contact</a>
-      <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-2 border-t border-outline-variant/10 mt-2 pt-2" href="app.html">App</a>
-      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest mt-4 w-full join-btn">
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-black/95 backdrop-blur-xl border-l border-outline-variant/30 p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out hidden">
+    <div>
+      <div class="flex justify-between items-center mb-10">
+        <span class="font-headline-md text-headline-md uppercase text-white tracking-wider"><span class="text-neon-red">HOUSE</span> OF GAINS</span>
+        <button id="close-menu-btn" class="text-on-surface hover:text-neon-red p-2 focus:outline-none" aria-label="Close Menu">
+          <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col gap-6 font-body-md text-body-md uppercase tracking-widest">
+        <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="index.html">Home</a>
+        <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="story.html">Story</a>
+        <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="programs.html">Programs</a>
+        <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
+        <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="membership.html">Tiers</a>
+        <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
+        <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="contact.html">Contact</a>
+        <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-1" href="app.html">App</a>
+      </div>
+    </div>
+    
+    <div class="space-y-6">
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-3 tracking-widest w-full join-btn hover:brightness-110 active:scale-95 transition-all">
         JOIN NOW
       </button>
+      <div class="flex justify-center gap-lg text-on-surface-variant">
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">photo_camera</span></a>
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">smart_display</span></a>
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">close</span></a>
+      </div>
     </div>
   </div>
 </nav>
@@ -196,7 +212,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]/50"></div>
         </div>
         <div class="relative z-10 text-center px-gutter">
-            <h1 class="font-display-xl text-display-xl uppercase tracking-tighter mb-md scroll-reveal active">
+            <h1 class="font-display-xl text-4xl sm:text-6xl md:text-display-xl uppercase tracking-tighter mb-md scroll-reveal active">
                 Forged in <span class="text-[#FF0000] text-glow-red">Power</span>
             </h1>
             <p class="font-body-lg text-body-lg max-w-2xl mx-auto text-on-surface-variant mb-lg scroll-reveal active" style="transition-delay: 0.2s;">
@@ -208,7 +224,7 @@
     <!-- Our Mission -->
     <section class="py-xl px-gutter max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
         <div class="scroll-reveal">
-            <h2 class="font-headline-lg text-headline-lg uppercase mb-md tracking-widest text-secondary">Our Mission</h2>
+            <h2 class="font-headline-lg text-3xl sm:text-4xl md:text-headline-lg uppercase mb-md tracking-widest text-secondary">Our Mission</h2>
             <div class="w-20 h-1 bg-[#FF0000] mb-lg"></div>
             <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md">
                 We exist to unlock the latent potential within every athlete. At House of Gains, we believe that fitness is the ultimate expression of human will. Our mission is to provide an uncompromising environment where the elite can push beyond their perceived limits.
@@ -257,7 +273,7 @@
     <!-- The Facility (Bento Style) -->
     <section class="py-xl px-gutter max-w-container-max mx-auto">
         <div class="text-center mb-xl">
-            <h2 class="font-headline-lg text-headline-lg uppercase tracking-tighter mb-sm">The Facility</h2>
+            <h2 class="font-headline-lg text-3xl sm:text-4xl md:text-headline-lg uppercase tracking-tighter mb-sm">The Facility</h2>
             <p class="text-on-surface-variant font-body-md uppercase tracking-widest">Where technology meets raw iron</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-12 gap-md h-auto md:h-[600px]">
@@ -291,7 +307,7 @@
         <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-xl items-center relative z-10">
             <div class="order-2 lg:order-1 scroll-reveal">
                 <div class="glass-panel p-lg">
-                    <h2 class="font-headline-lg text-headline-lg uppercase mb-md tracking-widest text-secondary">The Story</h2>
+                    <h2 class="font-headline-lg text-3xl sm:text-4xl md:text-headline-lg uppercase mb-md tracking-widest text-secondary">The Story</h2>
                     <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-md italic">
                         "I wanted a place that didn't just have weights, but had a soul of steel. A place where the noise of the world fades, and the only thing left is your heartbeat and the iron."
                     </p>
@@ -318,7 +334,7 @@
     <!-- Call to Action -->
     <section class="py-xl bg-surface-container-lowest">
         <div class="max-w-3xl mx-auto text-center px-gutter">
-            <h2 class="font-display-xl text-headline-lg uppercase tracking-widest mb-md">Ready to Forge Your Legacy?</h2>
+            <h2 class="font-display-xl text-3xl sm:text-4xl md:text-headline-lg uppercase tracking-widest mb-md">Ready to Forge Your Legacy?</h2>
             <p class="font-body-lg text-body-lg text-on-surface-variant mb-xl">Applications for elite membership are currently open. Join the collective.</p>
             <div class="flex flex-col sm:flex-row gap-md justify-center">
                 <button class="bg-[#FF0000] text-white px-xl py-md font-bold uppercase tracking-widest transition-all hover:scale-105 active:scale-95 join-btn">Book a Tour</button>
@@ -348,6 +364,17 @@
         </p>
     </div>
 </footer>
+
+<!-- Mobile Floating Action Bar -->
+<div class="fixed bottom-4 left-4 right-4 z-40 bg-surface/90 backdrop-blur-md border border-outline-variant/30 p-4 rounded-xl flex items-center justify-between shadow-2xl md:hidden">
+  <div class="flex flex-col">
+    <span class="text-[9px] uppercase tracking-widest text-on-surface-variant font-bold">House of Gains</span>
+    <span class="text-xs font-bold text-white uppercase tracking-wider">Unleash Your Power</span>
+  </div>
+  <button class="bg-[#FF0000] text-white text-[10px] font-bold uppercase px-4 py-2 tracking-widest hover:brightness-110 active:scale-95 transition-all join-btn">
+    JOIN NOW
+  </button>
+</div>
 
 <script type="module" src="/main.js"></script>
 </body>

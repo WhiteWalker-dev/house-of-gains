@@ -173,20 +173,36 @@
     </div>
   </div>
   
-  <!-- Mobile Navigation Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-outline-variant/30 px-gutter py-4 transition-all duration-300">
-    <div class="flex flex-col gap-md font-body-md text-body-md uppercase tracking-widest py-2">
-      <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="index.html">Home</a>
-      <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="story.html">Story</a>
-      <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="programs.html">Programs</a>
-      <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
-      <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="membership.html">Tiers</a>
-      <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
-      <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-2" href="contact.html">Contact</a>
-      <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-2 border-t border-outline-variant/10 mt-2 pt-2" href="app.html">App</a>
-      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest mt-4 w-full join-btn">
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-black/95 backdrop-blur-xl border-l border-outline-variant/30 p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out hidden">
+    <div>
+      <div class="flex justify-between items-center mb-10">
+        <span class="font-headline-md text-headline-md uppercase text-white tracking-wider"><span class="text-neon-red">HOUSE</span> OF GAINS</span>
+        <button id="close-menu-btn" class="text-on-surface hover:text-neon-red p-2 focus:outline-none" aria-label="Close Menu">
+          <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col gap-6 font-body-md text-body-md uppercase tracking-widest">
+        <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="index.html">Home</a>
+        <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="story.html">Story</a>
+        <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="programs.html">Programs</a>
+        <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
+        <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="membership.html">Tiers</a>
+        <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
+        <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="contact.html">Contact</a>
+        <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-1" href="app.html">App</a>
+      </div>
+    </div>
+    
+    <div class="space-y-6">
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-3 tracking-widest w-full join-btn hover:brightness-110 active:scale-95 transition-all">
         JOIN NOW
       </button>
+      <div class="flex justify-center gap-lg text-on-surface-variant">
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">photo_camera</span></a>
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">smart_display</span></a>
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">close</span></a>
+      </div>
     </div>
   </div>
 </nav>
@@ -194,7 +210,7 @@
 <main class="pt-32 pb-xl flex-grow">
     <!-- Hero Section -->
     <section class="max-w-container-max mx-auto px-gutter mb-xl text-center">
-        <h1 class="font-display-xl text-headline-lg md:text-display-xl mb-4 tracking-tight">CHOOSE YOUR <span class="text-[#FF0000] neon-glow">BATTLEGROUND</span></h1>
+        <h1 class="font-display-xl text-3xl sm:text-5xl md:text-display-xl mb-4 tracking-tight">CHOOSE YOUR <span class="text-[#FF0000] neon-glow">BATTLEGROUND</span></h1>
         <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Elite performance requires elite equipment. Select the membership that matches your ambition. No excuses, just gains.</p>
         <!-- Pricing Toggle -->
         <div class="flex items-center justify-center gap-md mb-12">
@@ -241,7 +257,7 @@
             <button class="w-full border border-outline text-on-surface font-bold py-4 tracking-widest hover:bg-[#FF0000] hover:border-[#FF0000] transition-all select-tier-btn" data-tier="essential">SELECT TIER</button>
         </div>
         <!-- Premium Plan (Featured) -->
-        <div class="relative bg-surface-container-high border-2 border-[#FF0000] p-md flex flex-col shadow-[0_0_30px_rgba(255,0,0,0.15)] scale-105 z-10 scroll-reveal" style="transition-delay: 0.1s;">
+        <div class="relative bg-surface-container-high border-2 border-[#FF0000] p-md flex flex-col shadow-[0_0_30px_rgba(255,0,0,0.15)] scale-100 md:scale-105 my-4 md:my-0 z-10 scroll-reveal" style="transition-delay: 0.1s;">
             <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FF0000] text-white text-[10px] font-bold px-4 py-1 tracking-widest">MOST POPULAR</div>
             <div class="mb-base">
                 <span class="font-label-md text-label-md text-secondary tracking-widest uppercase">Performance Tier</span>
@@ -362,7 +378,7 @@
             <img alt="Gym Environment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjBZuq3hfQjnX0_W2JbqnMpTBMTcBM9C_3eHZHzAg8Pzd-_buJ2dNYFJJQQb8UEbFt-LY1vMrtSK7vePl6z-g55ViiBpRstQANTeQxml6G7yHD8o00AdjqAsPaDQ1DuUK2YOhtDTQ6LSuTRU-UxpQ_-zFxAZAiaS56alFSVoxtN4_JD82T4KYV3TkMsK43IQpWM-pe1KU_5SWm3gR7osPYlNA6A_JY_f0gjB2PFcBdV5-S2nZtrHnSw4ezq83dPpnT_TKtoFuaCKLp">
             <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent flex items-center p-xl">
                 <div class="max-w-lg">
-                    <h2 class="font-headline-md text-display-xl mb-4 leading-none">FORGED IN <span class="text-[#FF0000]">POWER</span></h2>
+                    <h2 class="font-headline-md text-3xl md:text-display-xl mb-4 leading-none">FORGED IN <span class="text-[#FF0000]">POWER</span></h2>
                     <p class="font-body-lg text-body-lg mb-8">Not sure which plan is right for you? Speak with a performance consultant today.</p>
                     <button class="bg-[#FF0000] text-white font-bold px-10 py-5 tracking-widest hover:brightness-110 transition-all uppercase consultation-btn">TALK TO A PRO</button>
                 </div>
@@ -389,6 +405,17 @@
         <p class="font-body-md text-body-md text-on-surface-variant/60 uppercase tracking-widest mt-base">© 2024 HOUSE OF GAINS. FORGED IN POWER.</p>
     </div>
 </footer>
+
+<!-- Mobile Floating Action Bar -->
+<div class="fixed bottom-4 left-4 right-4 z-40 bg-surface/90 backdrop-blur-md border border-outline-variant/30 p-4 rounded-xl flex items-center justify-between shadow-2xl md:hidden">
+  <div class="flex flex-col">
+    <span class="text-[9px] uppercase tracking-widest text-on-surface-variant font-bold">House of Gains</span>
+    <span class="text-xs font-bold text-white uppercase tracking-wider">Unleash Your Power</span>
+  </div>
+  <button class="bg-[#FF0000] text-white text-[10px] font-bold uppercase px-4 py-2 tracking-widest hover:brightness-110 active:scale-95 transition-all join-btn">
+    JOIN NOW
+  </button>
+</div>
 
 <script type="module" src="/main.js"></script>
 <script>
