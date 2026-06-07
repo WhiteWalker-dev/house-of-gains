@@ -117,15 +117,6 @@
             border-color: #FF0000;
             outline: none;
         }
-        .masonry-grid {
-            columns: 1;
-        }
-        @media (min-width: 768px) {
-            .masonry-grid { columns: 2; }
-        }
-        @media (min-width: 1024px) {
-            .masonry-grid { columns: 3; }
-        }
         body {
             background-color: #0A0A0A;
             color: #e4e2e1;
@@ -220,12 +211,13 @@
 <main class="pt-32 pb-xl px-gutter max-w-container-max mx-auto flex-grow">
     <!-- Hero Title Section -->
     <section class="mb-xl text-center md:text-left">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-md border-l-4 border-neon-red pl-6">
-            <div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-md border-l-0 md:border-l-4 border-neon-red pl-0 md:pl-6">
+            <div class="space-y-sm">
                 <span class="font-label-md text-label-md text-neon-red uppercase tracking-widest mb-xs block">Hall of Fame</span>
                 <h1 class="font-display-xl text-4xl sm:text-6xl md:text-display-xl leading-none uppercase">Results <br class="hidden md:block"> Speak Louder</h1>
+                <div class="h-1 w-20 bg-neon-red mx-auto md:hidden"></div>
             </div>
-            <div class="max-w-md">
+            <div class="max-w-md mx-auto md:mx-0">
                 <p class="font-body-lg text-body-lg text-on-surface-variant">Elite athletes aren't born; they're forged. Witness the physical evolution of those who refused to accept mediocrity.</p>
             </div>
         </div>
@@ -263,7 +255,7 @@
     </section>
 
     <!-- Masonry Gallery -->
-    <div class="masonry-grid gap-gutter space-y-gutter">
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 mb-xl">
         <!-- Gallery Item 1 (Wide Highlight) -->
         <div class="break-inside-avoid relative overflow-hidden group glass-card">
             <img class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHv7NyvGE9zNLuyoRPsOLSnNAGlMBO0rGeEhPd4nuCp8Bjwl3CcmN4-LoWJC8AL3IdAHEI0QITrBkfYxO81BwsoAhoInsWdUag1iRzsClSFpJJ6hCmcUlCzMwHRtZ3KI5Bcy3jT7mw9S8Y_hgE-RobZLiwtkI0Io4W5v3GL5Ur22tD9QjA1JjTO_vrykzE5NaIDWZuYXL2L0tMtQjTGWyKgZTVxbfU2jsjn0uab7cesrZGQH5Kf7i0vNNC0daL-KXFqjX0o_ZiCfuD">
@@ -296,7 +288,7 @@
             </div>
         </div>
         <!-- Gallery Item 2 -->
-        <div class="break-inside-avoid relative overflow-hidden group glass-card h-[500px]">
+        <div class="break-inside-avoid relative overflow-hidden group glass-card h-[300px] md:h-[500px]">
             <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrd_mbypNSkAuypKjMRatSaCr5SsSNZOFiMuZKcO2Zw8sNE2_CDKcDYHTTYrE7CJA3r7ObB57CD3M8W8mYAJ7jFzYGIjev5LIxHsAzhYtKzzt2AdjQ32PVlmGIzIwX8dXaciXHqqb46NbUB944k4SfRPYoiC3dQRElRFA_ZhBU_VDGTkkyeoPgXgQ2l8kxY7OkJBRUszQIY9KDJ7eNDSg-IDOS2SrolRNBIkYGU-UX8Drk9terhS7WmK5hiTNl0XWxxEi3aPelkKFc">
             <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 flex items-center justify-center">
                 <span class="font-headline-lg text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">SARAH M.</span>
@@ -313,7 +305,7 @@
             </div>
         </div>
         <!-- Success Stats Card -->
-        <div class="break-inside-avoid bg-neon-red p-lg flex flex-col justify-between aspect-square">
+        <div class="break-inside-avoid bg-neon-red p-6 md:p-lg flex flex-col justify-between h-auto py-12 md:py-6 md:aspect-square">
             <h3 class="font-display-xl text-headline-lg text-white leading-none">FORGED IN POWER.</h3>
             <div>
                 <div class="w-full h-1 bg-white/20 mb-md relative overflow-hidden">
