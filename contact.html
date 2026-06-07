@@ -139,7 +139,7 @@
             animation: marquee 30s linear infinite;
         }
     </style>
-  <script type="module" crossorigin src="/house-of-gains/assets/main-DwWLAaNe.js"></script>
+  <script type="module" crossorigin src="/house-of-gains/assets/main-BUQ1O5ER.js"></script>
 </head>
 <body class="bg-background flex flex-col min-h-screen">
 
@@ -173,20 +173,36 @@
     </div>
   </div>
   
-  <!-- Mobile Navigation Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-outline-variant/30 px-gutter py-4 transition-all duration-300">
-    <div class="flex flex-col gap-md font-body-md text-body-md uppercase tracking-widest py-2">
-      <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="index.html">Home</a>
-      <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="story.html">Story</a>
-      <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="programs.html">Programs</a>
-      <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
-      <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="membership.html">Tiers</a>
-      <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
-      <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-2" href="contact.html">Contact</a>
-      <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-2 border-t border-outline-variant/10 mt-2 pt-2" href="app.html">App</a>
-      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest mt-4 w-full join-btn">
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-black/95 backdrop-blur-xl border-l border-outline-variant/30 p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out hidden">
+    <div>
+      <div class="flex justify-between items-center mb-10">
+        <span class="font-headline-md text-headline-md uppercase text-white tracking-wider"><span class="text-neon-red">HOUSE</span> OF GAINS</span>
+        <button id="close-menu-btn" class="text-on-surface hover:text-neon-red p-2 focus:outline-none" aria-label="Close Menu">
+          <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col gap-6 font-body-md text-body-md uppercase tracking-widest">
+        <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="index.html">Home</a>
+        <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="story.html">Story</a>
+        <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="programs.html">Programs</a>
+        <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
+        <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="membership.html">Tiers</a>
+        <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
+        <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="contact.html">Contact</a>
+        <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-1" href="app.html">App</a>
+      </div>
+    </div>
+    
+    <div class="space-y-6">
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-3 tracking-widest w-full join-btn hover:brightness-110 active:scale-95 transition-all">
         JOIN NOW
       </button>
+      <div class="flex justify-center gap-lg text-on-surface-variant">
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">photo_camera</span></a>
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">smart_display</span></a>
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">close</span></a>
+      </div>
     </div>
   </div>
 </nav>
@@ -199,7 +215,7 @@
             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
         </div>
         <div class="relative z-10 text-center px-gutter">
-            <h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl tracking-tighter text-on-surface uppercase">START YOUR EVOLUTION.</h1>
+            <h1 class="font-display-xl text-3xl sm:text-5xl md:text-display-xl tracking-tighter text-on-surface uppercase">START YOUR EVOLUTION.</h1>
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-4 uppercase tracking-[0.2em] text-sm">Contact the facility of elite performance.</p>
         </div>
     </section>
@@ -337,6 +353,17 @@
         <p class="font-body-md text-body-md text-secondary mt-4 uppercase tracking-[0.3em]">© 2024 HOUSE OF GAINS. FORGED IN POWER.</p>
     </div>
 </footer>
+
+<!-- Mobile Floating Action Bar -->
+<div class="fixed bottom-4 left-4 right-4 z-40 bg-surface/90 backdrop-blur-md border border-outline-variant/30 p-4 rounded-xl flex items-center justify-between shadow-2xl md:hidden">
+  <div class="flex flex-col">
+    <span class="text-[9px] uppercase tracking-widest text-on-surface-variant font-bold">House of Gains</span>
+    <span class="text-xs font-bold text-white uppercase tracking-wider">Unleash Your Power</span>
+  </div>
+  <button class="bg-[#FF0000] text-white text-[10px] font-bold uppercase px-4 py-2 tracking-widest hover:brightness-110 active:scale-95 transition-all join-btn">
+    JOIN NOW
+  </button>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {

@@ -142,7 +142,7 @@
             animation: marquee 30s linear infinite;
         }
     </style>
-  <script type="module" crossorigin src="/house-of-gains/assets/main-DwWLAaNe.js"></script>
+  <script type="module" crossorigin src="/house-of-gains/assets/main-BUQ1O5ER.js"></script>
 </head>
 <body class="font-body-md selection:bg-secondary-container selection:text-white flex flex-col min-h-screen">
 
@@ -176,20 +176,36 @@
     </div>
   </div>
   
-  <!-- Mobile Navigation Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden bg-surface-container border-b border-outline-variant/30 px-gutter py-4 transition-all duration-300">
-    <div class="flex flex-col gap-md font-body-md text-body-md uppercase tracking-widest py-2">
-      <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="index.html">Home</a>
-      <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="story.html">Story</a>
-      <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="programs.html">Programs</a>
-      <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
-      <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="membership.html">Tiers</a>
-      <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-2 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
-      <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-2" href="contact.html">Contact</a>
-      <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-2 border-t border-outline-variant/10 mt-2 pt-2" href="app.html">App</a>
-      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-sm tracking-widest mt-4 w-full join-btn">
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-black/95 backdrop-blur-xl border-l border-outline-variant/30 p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out hidden">
+    <div>
+      <div class="flex justify-between items-center mb-10">
+        <span class="font-headline-md text-headline-md uppercase text-white tracking-wider"><span class="text-neon-red">HOUSE</span> OF GAINS</span>
+        <button id="close-menu-btn" class="text-on-surface hover:text-neon-red p-2 focus:outline-none" aria-label="Close Menu">
+          <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col gap-6 font-body-md text-body-md uppercase tracking-widest">
+        <a id="mobile-nav-home" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="index.html">Home</a>
+        <a id="mobile-nav-story" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="story.html">Story</a>
+        <a id="mobile-nav-programs" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="programs.html">Programs</a>
+        <a id="mobile-nav-trainers" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="trainers.html">Trainers</a>
+        <a id="mobile-nav-membership" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="membership.html">Tiers</a>
+        <a id="mobile-nav-gallery" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="gallery.html">Gallery</a>
+        <a id="mobile-nav-contact" class="text-on-surface hover:text-secondary py-1 border-b border-outline-variant/10" href="contact.html">Contact</a>
+        <a id="mobile-nav-app" class="text-on-surface hover:text-secondary py-1" href="app.html">App</a>
+      </div>
+    </div>
+    
+    <div class="space-y-6">
+      <button class="bg-neon-red text-white font-body-md font-bold uppercase px-md py-3 tracking-widest w-full join-btn hover:brightness-110 active:scale-95 transition-all">
         JOIN NOW
       </button>
+      <div class="flex justify-center gap-lg text-on-surface-variant">
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">photo_camera</span></a>
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">smart_display</span></a>
+        <a href="#" class="hover:text-neon-red transition-all"><span class="material-symbols-outlined text-xl">close</span></a>
+      </div>
     </div>
   </div>
 </nav>
@@ -202,7 +218,7 @@
             <div class="absolute inset-0 hero-gradient"></div>
         </div>
         <div class="relative z-10 px-gutter max-w-container-max mx-auto w-full pb-xl">
-            <h1 class="font-display-xl text-display-xl text-white uppercase mb-sm">Master Your <span class="text-[#FF0000]">Forge</span></h1>
+            <h1 class="font-display-xl text-4xl sm:text-6xl md:text-display-xl text-white uppercase mb-sm">Master Your <span class="text-[#FF0000]">Forge</span></h1>
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Precision-engineered training protocols designed for those who refuse to settle. Select your path to dominance.</p>
         </div>
     </section>
@@ -211,7 +227,7 @@
     <section class="px-gutter max-w-container-max mx-auto py-xl">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-md">
             <!-- Weight Training (Featured Large) -->
-            <div class="md:col-span-8 group relative overflow-hidden glass-card h-[500px] scroll-reveal">
+            <div class="md:col-span-8 group relative overflow-hidden glass-card h-[380px] md:h-[500px] scroll-reveal">
                 <img alt="Weight Training" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV8ZKN5gqbnxqvYHUFH4ah9HpgoLOjaLlFm284iJTkndiOat7_NvqTc6BQA6T55OFtkMjrSvr8X48rW0dT4sxXEsi5y3r_Z6UnAvRBdsLnypZwS4l0HnGPz6LG9rzgOueNS-fSD34AlAvR3C28u_2Rg--dL8-f51uHdQzOpaiAFCnw3vrcITi8feqKSxB1Pb82GtGd3bxn1wD6bamJSihDm7VE6rx9AoYTv17Hk2BRkESChAh52pX81sWsPHlu_V1Dmg0uxGuAkyLJ">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-lg w-full">
@@ -225,7 +241,7 @@
                 </div>
             </div>
             <!-- Fat Loss -->
-            <div class="md:col-span-4 group relative overflow-hidden glass-card h-[500px] scroll-reveal" style="transition-delay: 0.1s;">
+            <div class="md:col-span-4 group relative overflow-hidden glass-card h-[380px] md:h-[500px] scroll-reveal" style="transition-delay: 0.1s;">
                 <img alt="Fat Loss" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZdTPzJw9IynUotqisulzfbe90gJo0nrxbQi9JKzVfX3UuUyxzUqXDo4O-wF3hQ06AwI2yE09y05-hW6xTIwqsASuVc3ssAWqjwfEH3hbAHkcq1-NtOg5-vDwfpfK5PaHRhDYJUOSR_y0KLcatawYGay38ALsEEAkLJhlp5PeyQn9QBZ5JkTMELi7jTTI2QW4HuGvNb3zYbzC19GzJl0LCifllcCG-RW0_gMgUbB0rdxmgLA8rTdT4RKMBKR29ZGPd59e8iaSFkQen">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-lg w-full">
@@ -239,7 +255,7 @@
                 </div>
             </div>
             <!-- Bodybuilding -->
-            <div class="md:col-span-4 group relative overflow-hidden glass-card h-[400px] scroll-reveal">
+            <div class="md:col-span-4 group relative overflow-hidden glass-card h-[280px] md:h-[400px] scroll-reveal">
                 <img alt="Bodybuilding" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjHyrLIBMmvZ8wmBCq0D582AHG2hAH4_5tCLOJ9o1Uw_259PTTqdMMLwqLuhr1Nmba9I4QcTCUGMdLk4cefiIY3Vy5Rhln7CWG1J_v9xEF6SlFPTEbBxCJJKTwpMV2qBiH28aknHDTdrXC7O3NvjFBR_F4LKWq2jJ_qMo4ggLveytLj31c8sO7C8xcVuOmRoUgCkGkbJf9anzKh8NITGd6-jkqhOQRJf_lyKwsoijtBogx0SPD1X8sQ4uyxWGrIGjaueybu9xSMl1P">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-md w-full">
@@ -248,7 +264,7 @@
                 </div>
             </div>
             <!-- CrossFit -->
-            <div class="md:col-span-4 group relative overflow-hidden glass-card h-[400px] scroll-reveal" style="transition-delay: 0.1s;">
+            <div class="md:col-span-4 group relative overflow-hidden glass-card h-[280px] md:h-[400px] scroll-reveal" style="transition-delay: 0.1s;">
                 <img alt="CrossFit" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnkPWbHmJwMc8r7jW3i_3n2aTMzcnH5fVNpAMA0fQts_Rv2eYypKsj0sA1ELRil80JDqGKqBXE2Uj_W5-YkWuRZb0J-exZJ7NonsvgpC80VwozJGeRg1Y7u2_70z2G09qjEwpF2wnQp9IblzQ7ZJW8fm2oJIieNH7xBDosNOLBp4jNlIxCk-24KvUmb5THDV-j5baVRZOC9NQ_pk3U8rsuBBSMpjN7FPM4htUZwkKraOFfuwzCom-MHGlmwej6TVY0qWk40bY8f31N">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-md w-full">
@@ -257,7 +273,7 @@
                 </div>
             </div>
             <!-- Personal Training -->
-            <div class="md:col-span-4 group relative overflow-hidden glass-card h-[400px] scroll-reveal" style="transition-delay: 0.2s;">
+            <div class="md:col-span-4 group relative overflow-hidden glass-card h-[280px] md:h-[400px] scroll-reveal" style="transition-delay: 0.2s;">
                 <img alt="Personal Training" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOBd720r03auP8143wyfMXD22QYFs-hnScyaehZ9fb3oNPVHup14uQ4dTBO0Py8v_gVh3DNY56hD7JvWNbjrQPwylP1I55Am5vKdXxPFKjMp-fZMwnlZ_djCyG1CRbDRSOfw-KtSDWMSpijEIKy-Xb-RrFdWSfQ2CiWSDqleCHYHBRa3hMQnesI3o_nZm6_yXmyKL4J9t2VD5SmGdB20Pb6CMP6fAi-VkhIsXmvfJ6B6WTaEGrPpPtv76ESOgRSfy3V_Ajna_wL5wR">
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-md w-full">
@@ -266,7 +282,7 @@
                 </div>
             </div>
             <!-- Yoga & Mobility (Full Width Feature) -->
-            <div class="md:col-span-12 group relative overflow-hidden glass-card h-[300px] scroll-reveal">
+            <div class="md:col-span-12 group relative overflow-hidden glass-card h-[240px] md:h-[300px] scroll-reveal">
                 <img alt="Yoga &amp; Mobility" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvmQAL-HOUSpiYXCJJzettXk0pTVHI-esgLMOzemSXgPCNdGXup2UIf-4SKEkafM5s-HRqENvSr_PTjjESDOZXkqa6aG5ogEMQgquOoYXtkqudqGxib6gmDD9BzE1HSLhzSspw6ehjrVZcuflGQZgX9nNWPP1JnZRiG-7mYhx2vo3ho-JrksWzqTNL7GnCnMVZtsRbA6SgGPn185xAdBmXI2oQ5E_YGhorpZpNjVZRCKMky8eo_MIPXXvXUA0u_qZB3V8tCOTkKNMy">
                 <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
                 <div class="absolute inset-0 flex flex-col justify-center px-lg max-w-xl">
@@ -328,6 +344,17 @@
         <p class="font-body-md text-body-md text-secondary uppercase tracking-widest">© 2024 HOUSE OF GAINS. FORGED IN POWER.</p>
     </div>
 </footer>
+
+<!-- Mobile Floating Action Bar -->
+<div class="fixed bottom-4 left-4 right-4 z-40 bg-surface/90 backdrop-blur-md border border-outline-variant/30 p-4 rounded-xl flex items-center justify-between shadow-2xl md:hidden">
+  <div class="flex flex-col">
+    <span class="text-[9px] uppercase tracking-widest text-on-surface-variant font-bold">House of Gains</span>
+    <span class="text-xs font-bold text-white uppercase tracking-wider">Unleash Your Power</span>
+  </div>
+  <button class="bg-[#FF0000] text-white text-[10px] font-bold uppercase px-4 py-2 tracking-widest hover:brightness-110 active:scale-95 transition-all join-btn">
+    JOIN NOW
+  </button>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
